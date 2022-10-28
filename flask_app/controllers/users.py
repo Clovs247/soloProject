@@ -13,7 +13,7 @@ def index():
     else:
         return redirect('/dashboard/')
 
-@app.route("/register")
+@app.route("/register/form")
 def register_form():
     if 'user_id' not in session:
         return render_template("register.html")
@@ -22,24 +22,24 @@ def register_form():
 
 @app.route('/register/', methods=['post'])
 def register():
-    is_valid = user.validate(request.form)
+    is_valid = user.User.validate(request.form)
     if not is_valid:
-        return redirect('/')
+        return redirect('/register/form')
     else:
         new_user = {
             'username': request.form['username'],
             'email': request.form['email'],
             'password': bcrypt.generate_password_hash(request.form['password'])
         }
-        id = user.create_user(new_user)
+        id = user.User.create_user(new_user)
         if not id:
             flash('Something Went Terribly Wrong')
-            return redirect('/')
+            return redirect('/register/form')
         else:
             session["user_id"] = id
             return redirect('/dashboard/')
 
-@app.route("/login")
+@app.route("/login/form")
 def login_form():
     if 'user_id' not in session:
         return render_template("login.html")
@@ -51,13 +51,13 @@ def login():
     data = {
         'email' : request.form['email']
     }
-    id = user.get_user_by_email(data)
+    id = user.User.get_user_by_email(data)
     if not id:
         flash("That email isn't in our database yet. Please Register")
-        return redirect('/')
+        return redirect('/login/form')
     if not bcrypt.check_password_hash(id.password, request.form['password']):
         flash("Wrong Password")
-        return redirect('/')
+        return redirect('/login/form')
     else:
         session['user_id'] = id.id
         return redirect ('/dashboard/')
@@ -75,7 +75,7 @@ def dashboard():
         data = {
             'id' : session['user_id']
         }
-        logged_in_user = user.get_user_by_id(data)
-        all_users = user.get_all_users()
+        logged_in_user = user.User.get_user_by_id(data)
+        all_users = user.User.get_all_users()
         
         return render_template('dashboard.html', logged_in_user = logged_in_user, all_users = all_users)
