@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Document</title>
+</head>
+<body>
+
+    {% with messages = get_flashed_messages %}
+        {% if messages %}
+        <strong>WAAAIIITTTTT</strong>
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <header>
+        <nav>
+            {% block menu %} {% include 'login_reg_menu.html' %} {% endblock menu %}
+        </nav>
+    </header>
+    <main>
+
+        <h1>Welcome to Splatsville</h1>
+
+        <h3>Login</h3>
+        <form action="/login/" method="post">
+            <div>
+                <label>
+                    Email:
+                    <input type="email" name="email">
+                </label>
+                <label>
+                    Password:
+                    <input type="password" name="password">
+                </label>
+                <input type="submit" value="Login"
+            </div>
+        </form>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>
+
