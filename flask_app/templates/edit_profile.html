@@ -20,15 +20,27 @@
 
     <header>
         <nav>
-            {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
+            {% block menu %} {% include 'edit_menu.html' %} {% endblock menu %}
         </nav>
     </header>
     <main>
 
-        <h1>{{logged_in_user.username}}</h1>
-        <h2>Welcome to Splatsville</h2>
+        <h1></h1>
+        <h2>You're about to Edit your Profile, are you sure?</h2>
 
-        
+        <form action="/update/profile/" method="post">
+            <div>
+                <label>
+                    Username:
+                    <input type="text" name="username" value="{{logged_in_user.username}}">
+                </label>
+                <label>
+                    Email:
+                    <input type="email" name="email" value="{{logged_in_user.email}}">
+                </label>
+                <input type="submit" value="Submit"
+            </div>
+        </form>
 
     </main>
     <footer>
@@ -37,4 +49,3 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
 </html>
-
