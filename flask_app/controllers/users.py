@@ -71,16 +71,16 @@ def edit_user():
             'id': session['user_id']
         }
         logged_in_user = user.User.get_user_by_id(user_data)
-        return render_template('edit_profile.html', logged_in_user)
+        return render_template('edit_profile.html', logged_in_user=logged_in_user)
 
 @app.route('/update/profile/', methods=['post'])
-def update_user(data):
-    is_valid=user.User.validate(request.form)
+def update_user():
+    is_valid=user.User.validate_update(request.form)
     if not is_valid:
         return redirect('/')
     else:
         user_data = {
-            'id' : data,
+            'id' : session['user_id'],
             'username' : request.form['username'],
             'email' : request.form['email']
         }

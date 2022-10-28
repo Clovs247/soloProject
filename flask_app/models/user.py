@@ -75,7 +75,7 @@ class User:
         query = """
         UPDATE user SET
         username = %(username)s,
-        email = %(email)s,
+        email = %(email)s
         WHERE id = %(id)s
         ;"""
         return connectToMySQL(cls.db).query_db(query, data)
@@ -121,4 +121,26 @@ class User:
             if user['password'] != user['confirm_password']:
                 is_valid = False
                 flash("Passwords are not matching, check your spelling.")
+            return is_valid
+
+    @staticmethod
+    def validate_update(user):
+            is_valid = True
+            query = """
+            SELECT * FROM user
+            WHERE email = %(email)s
+            ;"""
+            results = connectToMySQL(User.db).query_db(query, user)
+            if len(results)> 1:
+                is_valid=False
+                flash("That email has already been entered into the database")
+            if not EMAIL_REGEX.match(user['email']):
+                is_valid=False
+                flash("Invalid Email Format")
+            if len(user['username'])<1:
+                is_valid = False
+                flash("First Name must contain at least 1 character")
+            if len(user['username'])>10:
+                is_valid = False
+                flash("First Name must not contain more than 10 character")
             return is_valid
