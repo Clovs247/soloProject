@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Splatsville Dashboard</title>
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <strong>WAAAIIITTTTT</strong>
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <header>
+        <nav>
+            {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
+        </nav>
+    </header>
+
+
+    <div>
+        <div>
+            <a href="">Image</a>
+        </div>
+        <div>
+            <a href="/dashboard/">Home</a>
+        </div>
+        <div>
+            <a href="/dashboard/maps/">All Maps</a>
+        </div>
+        <div>
+            <a href="">All Teams</a>
+        </div>
+        <div>
+            <a href="">Create a Team</a>
+        </div>
+        <div>
+            <a href="">Patch Notes</a>
+        </div>
+    </div>
+
+
+
+    <main>
+
+        <h1>All Weapons</h1>
+        
+        <div>
+            <label>
+                <img src="" alt="Scorch Gorge">
+                <p></p>
+            </label>
+            <img src="" alt="EelTail Alley">
+            <img src="" alt="Museum D'Alfonsino">
+            <img src="" alt="Undertow Spillway">
+            <img src="" alt="Mincemeat Metalworks">
+            <img src="" alt="Hammerhead Bridge">
+            <img src="" alt="Mahi-Mahi Resort">
+            <img src="" alt="Inkblot Art Academy">
+            <img src="" alt="Sturgeon Shipyard">
+            <img src="" alt="MakoMart">
+            <img src="" alt="Wahoo World">
+            <img src="" alt="Hagglefish Market">
+            <img src="" alt="Flounder Heights">
+        </div>
+    
+    
+    </main>
+
+
+        
+        
+
+    
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>
+
