@@ -41,6 +41,10 @@ class User:
         SELECT * FROM user
         ;"""
         results = connectToMySQL(cls.db).query_db(query)
+        members = []
+        for row in results:
+            members.append(cls(row))
+        return members
 
 
 

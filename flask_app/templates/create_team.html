@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Splatsville Dashboard</title>
+</head>
+
+
+<body>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <strong>WAAAIIITTTTT</strong>
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <header>
+        <nav>
+            {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
+        </nav>
+    </header>
+
+
+    <div>
+        <div>
+            <a href="">Image</a>
+        </div>
+        <div>
+            <a href="/dashboard/">Home</a>
+        </div>
+        <div>
+            <a href="/dashboard/maps/">All Maps</a>
+        </div>
+        <div>
+            <a href="/dashboard/weapons/">All Weapons</a>
+        </div>
+        <div>
+            <a href="">All Teams</a>
+        </div>
+        <div>
+            <a href="">Patch Notes</a>
+        </div>
+    </div>
+
+
+
+    <main>
+
+        <div>
+            <h1>Create a Team</h1>
+            <form action="/create/team/form/" method="post">
+                <label>
+                    Team Name:
+                    <input type="text" name="name">
+                </label>
+                <label>
+                    Weapon Choice:
+                    
+                </label>
+                <input type="hidden" name="user_id" value="{{ logged_in_user.id }}"
+                <input type="submit" value="Create">
+            </form>
+            
+        </div>
+    
+    
+    </main>
+    
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>

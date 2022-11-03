@@ -7,20 +7,49 @@ class Team:
     db = "Splatoon3Hub"
     def __init__(self, data):
         self.id = data['id']
-        self.on_team = []
-        self.weapon = data['weapon']
+        self.name = data['name']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        self.user_id = None
+        self.on_team = []
+
+
+# **************************************CREATE******************************
 
     @classmethod
     def save_team(cls, data):
         query = """
         INSERT INTO team
-        (weapon, created_at, updated_at)
+        (name, user_id)
         VALUES
-        (%(weapon)s, NOW(), NOW())
+        (%(name)s, %(user_id)s)
         ;"""
-        return connectToMySQL('user').query_db(query, data)
+        return connectToMySQL(cls.db).query_db(query, data)
+
+
+# **************************************READ******************************
+
+    @classmethod
+    def get_all_teams(cls):
+        query = """
+        SELECT * FROM team
+        ;"""
+        results = connectToMySQL(cls.db).query_db(query)
+        roster = []
+        for row in results:
+            roster.append(cls(row))
+        return roster
+
+    @classmethod
+    def get_a_team(cls, data):
+        query = """
+        SELCT * FROM team
+        WHERE id = %(id)s
+        ;"""
+        results = connectToMySQL(cls.db).query_db(query, data)
+        if len(results)<1:
+            return False
+        return cls(results[0])
 
     @classmethod
     def get_team_with_users(cls, data):
@@ -44,3 +73,37 @@ class Team:
             }
             team.on_team.append(user.User(user_data))
         return team
+
+
+# **************************************UPDATE******************************
+
+    # @classmethod
+    # def update_team(cls, data):
+    #     query = """
+    #     UPDATE team SET
+    #     name=%(name)s
+    #     WHERE id = %(id)s
+    #     ;"""
+    #     return connectToMySQL(cls.db).query_db(query, data)
+
+# **************************************DELETE******************************
+
+    @classmethod
+    def delete_team(cls, data):
+        query = """
+        DELETE FROM team
+        WHERE id = %(id)s
+        ;"""
+        return connectToMySQL(cls.db).query_db(query, data)
+
+
+    @staticmethod
+    def validate_team(team_id):
+        is_valid = True
+
+        if len(team_id['name'])<=2:
+            is_valid=False
+            flash("The name of this team needs to be at least 2 characters.")
+        
+        return is_valid
+
