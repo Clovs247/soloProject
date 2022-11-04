@@ -10,7 +10,6 @@ class Team:
         self.name = data['name']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.user_id = None
         self.on_team = []
 
 
@@ -71,6 +70,12 @@ class Team:
                 "created_at":row_from_db["created_at"],
                 "updated_at":row_from_db["updated_at"]
             }
+            teammember = user.User(user_data)
+            weap_data = {
+                "team_id":data["id"],
+                "user_id":teammember.id
+            }
+            # teammember.weapon = user.User.getWeapon(weap_data)
             team.on_team.append(user.User(user_data))
         return team
 

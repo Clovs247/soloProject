@@ -18,7 +18,7 @@ body{
 }
 .newnav a:hover{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     color: black;
     background-color: whitesmoke;
     font-size: 2vw;
@@ -62,7 +62,11 @@ input[type=submit] {
     padding: 16px 32px;
     margin: 5px;
     background-color: rebeccapurple;
-
-    box-sizing: border-box;
     border: 2px solid black;
 }
+/* input[type=button]{
+    padding: 1vw 2vw;
+    margin: 5px;
+    box-sizing: border-box;
+    border: none;
+} */

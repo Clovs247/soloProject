@@ -16,6 +16,7 @@ class User:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.team = []
+        self.weapon = None
 
 
 
@@ -72,6 +73,10 @@ class User:
             return False
         return cls(results[0])
 
+    @classmethod
+    def getWeapon():
+        pass
+    
 
 
 # *********************UPDATE***************************************
