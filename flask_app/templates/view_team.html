@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Splatsville Dashboard</title>
 </head>
+
+
 <body>
 
     {% with messages = get_flashed_messages() %}
@@ -39,6 +41,9 @@
             <a href="/dashboard/weapons/">All Weapons</a>
         </div>
         <div>
+            <a href="/all-teams/">All Teams</a>
+        </div>
+        <div>
             <a href="/create/team/">Create a Team</a>
         </div>
         <div>
@@ -50,21 +55,22 @@
 
     <main>
 
-        <h1>Your Teams</h1>
-        
-        
+        <div>
+            <h1>Your Team</h1>
 
-        <h2>All Teams</h2>
+
+
+            
+            
+            
+        </div>
     
     
     </main>
-
-
-
+    
     <footer>
 
     </footer>
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
 </html>
-

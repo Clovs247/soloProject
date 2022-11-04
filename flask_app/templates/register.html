@@ -19,35 +19,35 @@
     {% endwith %}
 
     <header>
-        <nav>
+        <nav class="newnav">
             {% block menu %} {% include 'login_reg_menu.html' %} {% endblock menu %}
         </nav>
     </header>
     <main>
 
-        <h1>Welcome to Splatsville</h1>
+        <h1 id="welcome">Welcome to Splatsville</h1>
 
-        <h3>Register</h3>
-        <form action="/register/" method="post">
-            <div>
-                <label>
-                    Username:
-                    <input type="text" name="username">
-                </label>
-                <label>
-                    Email:
-                    <input type="email" name="email">
-                </label>
-                <label>
-                    Password:
-                    <input type="password" name="password">
-                </label>
-                <label>
-                    Confirm Password:
-                    <input type="password" name="confirm_password">
-                </label>
-                <input type="submit" value="Register"
-            </div>
+        <h3 id="login_reg">Register</h3>
+        <form action="/register/" method="post" id="login_reg_form">
+            
+            <label>
+                Username:
+                <input type="text" name="username">
+            </label>
+            <label>
+                Email:
+                <input type="email" name="email">
+            </label>
+            <label>
+                Password:
+                <input type="password" name="password">
+            </label>
+            <label>
+                Confirm Password:
+                <input type="password" name="confirm_password">
+            </label>
+            <input type="submit" value="Register"
+            
         </form>
 
     </main>

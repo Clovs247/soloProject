@@ -19,17 +19,16 @@
     {% endwith %}
 
     <header>
-        <nav>
+        <nav class="newnav">
             {% block menu %} {% include 'login_reg_menu.html' %} {% endblock menu %}
         </nav>
     </header>
     <main>
 
-        <h1>Welcome to Splatsville</h1>
+        <h1 id="welcome">Welcome to Splatsville</h1>
 
-        <h3>Login</h3>
-        <form action="/login/" method="post">
-            <div>
+        <h3 id="login_reg">Login</h3>
+        <form action="/login/" method="post" id="login_reg_form">
                 <label>
                     Email:
                     <input type="email" name="email">
@@ -39,7 +38,7 @@
                     <input type="password" name="password">
                 </label>
                 <input type="submit" value="Login"
-            </div>
+
         </form>
 
     </main>
