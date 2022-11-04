@@ -2,14 +2,16 @@
 <html lang="en">
 <body>
     {% block menu %}
-    <!-- <form action="/edit/profile/">
-        <input type="button" value="Edit Profile">
-    </form> -->
-    <a href="/edit/profile/">Edit Profile</a>
-    <!-- <form action="/logout/">
-        <input type="button" value="Logout">
-    </form> -->
-    <a href="/logout/">Logout</a>
+    <div class="clock">
+        <div class="time"></div>
+        <div class="date-time"></div>
+    </div>
+    <div class="newnav">
+        
+        <a href="/edit/profile/">Edit Profile</a>
+        
+        <a href="/logout/">Logout</a>
+    </div>
     {% endblock menu %}
 </body>
 </html>

@@ -2,14 +2,16 @@
 <html lang="en">
 <body>
     {% block menu %}
-    <!-- <form action="/register/form" method="get">
-        <input type="button" value="Register">
-    </form> -->
-    <a href="/register/form" >Register</a>
-    <!-- <form action="/login/form" method="get">
-        <input type="button" value="Login">
-    </form> -->
-    <a href="/login/form" >Login</a>
+    <div class="clock">
+        <div class="time"></div>
+        <div class="date-time"></div>
+    </div>
+    <div class="newnav">
+
+        <a href="/register/form" >Register</a>
+        
+        <a href="/login/form" >Login</a>
+    </div>
     {% endblock menu %}
 </body>
 </html>
