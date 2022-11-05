@@ -1,5 +1,11 @@
-body{
+/* main{
     margin: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+} */
+body{
+    margin: 10px;
+
 }
 
 #welcome {
@@ -15,13 +21,19 @@ header{
     align-items: center;
     justify-content: center;
 }
+nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 .newnav{
     display: flex;
     justify-content: space-evenly;
-    background-color: black;
+    background-color:darkslateblue;
     color: whitesmoke;
     font-size: 4vw;
+    position: relative;
 }
 .newnav a:hover{
     display: flex;
@@ -29,6 +41,7 @@ header{
     color: black;
     background-color: whitesmoke;
     font-size: 4vw;
+    position: relative;
 }
 
 .clock{
@@ -39,6 +52,7 @@ header{
     align-items: center;
     font-family: sans-serif;
     background-color: slategrey;
+    position: relative;
 }
 
 .time{
@@ -64,6 +78,14 @@ header{
     font-size: 3vw;
 }
 
+#login_reg_form_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3vw;
+}
 #login_reg_form{
     display: flex;
     flex-direction: column;
@@ -73,29 +95,24 @@ header{
     font-size: 3vw;
 }
 
-
-
 input[type=text] {
     width: 100%;
 
     box-sizing: border-box;
     border: 2px solid black;
 }
-
 input[type=email] {
     width: 100%;
 
     box-sizing: border-box;
     border: 2px solid black;
 }
-
 input[type=password] {
     width: 100%;
 
     box-sizing: border-box;
     border: 2px solid black;
 }
-
 /* input[type=submit] {
     padding: 16px 32px;
     margin: 5px;
@@ -112,4 +129,64 @@ input[type=password] {
 /* label{
     width: 100%;
     border: 2px solid black;
+} */
+
+.dash{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* width: 100%; */
+    align-items: center;
+    position: sticky;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color:lightcoral;
+}
+
+.center-par{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+}
+
+.link{
+    text-decoration-line: none;
+    padding: 1vw;
+    border: 2px solid slategray;
+    background-color: azure;
+}
+
+.maps{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.map-imgs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 225px;
+    width: 400px;
+}
+
+.all-weapons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* .weapon-img{
+    height: 225px;
+    width: 400px;
+} */
+/* .weapon-sub{
+    height: 225px;
+    width: 400px;
+} */
+/* .weapon-spe{
+    height: 225px;
+    width: 400px;
 } */

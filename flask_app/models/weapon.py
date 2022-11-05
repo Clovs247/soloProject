@@ -8,62 +8,42 @@ class weapon:
         self.id = id
         self.name = name
 
+    # ****************************CREATE*************************************
 
 
-# weapons = [
-#     "Hero Shot Replica",
-#     "Splattershot Jr.",
-#     "Splat Charger",
-#     "Splat Roller",
-#     "Splattershot",
-#     "Blaster",
-#     "Splat Dualies",
-#     "Slosher",
-#     "Octobrush",
-#     "Heavy Splatling",
-#     "Tri-Stringer",
-#     "Splat Brella",
-#     "Aerospray MG",
-#     "Splatana Wiper",
-#     "Carbon Roller",
-#     "N-ZAP '85",
-#     "Rapid Blaster",
-#     "Inkbrush",
-#     "Classic Squiffer",
-#     "Dualie Squelchers",
-#     "Splatershot Pro",
-#     "Sploosh-o-matic",
-#     "Splatterscope",
-#     "Tri-Slosher",
-#     "REEF-LUX 450",
-#     "Range Blaster",
-#     ".52 Gal",
-#     "Dynamo Roller",
-#     "Mini Splatling",
-#     "Luna Blaster",
-#     "L-3 Nozzlenose",
-#     "Dapple Dualies",
-#     "Sloshing Machine",
-#     "Jet Squelcher",
-#     "Splatana Stamper",
-#     "Tenta Brella",
-#     "Splach-o-matic",
-#     "Dark Tetra Dualies",
-#     ".96 Gal",
-#     "Undercover Brella",
-#     "E-Liter 4K",
-#     "Squeezer",
-#     "Bloblobber",
-#     "Flingza Roller",
-#     "Hydra Splatling",
-#     "Glooga Dualies",
-#     "Clash Blaster",
-#     "Bamboozler 14 Mk 1",
-#     "H-3 Nozzlenose",
-#     "Goo Tuber",
-#     "Rapid Blaster Pro",
-#     "E-Liter 4K Scope",
-#     "Nautilus 47",
-#     "Explosher",
-#     "Ballpoint Splatling"
-# ]
+
+    # *****************************READ************************************
+
+    @classmethod
+    def get_all_weapons(cls):
+        query="""
+        SELECT * FROM weapon
+        ;"""
+        results = connectToMySQL(cls.db).query_db(query)
+        mainWep = []
+        for row in results:
+            mainWep.append(cls(row))
+        return mainWep
+
+    
+    # ****************************UPDATE*************************************
+
+    @classmethod
+    def get_weapon_by_id(cls, data):
+        query="""
+        SELECT * FROM weapon
+        WHERE id = %(id)s
+        ;"""
+        results = connectToMySQL(cls.db).query_db(query, data)
+        if len(results) < 1:
+            return False
+        return cls(results[0])
+
+    # *****************************DELETE*************************************
+
+
+
+
+    # *****************************CONNECTION*************************************
+
+

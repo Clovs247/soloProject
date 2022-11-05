@@ -25,22 +25,22 @@
     </header>
     <main>
 
-        <h1></h1>
-        <h2>You're about to Edit your Profile, are you sure?</h2>
-
-        <form action="/update/profile/" method="post">
-            <div>
-                <label>
-                    Username:
-                    <input type="text" name="username" value="{{logged_in_user.username}}">
-                </label>
-                <label>
-                    Email:
-                    <input type="email" name="email" value="{{logged_in_user.email}}">
-                </label>
-                <input type="submit" value="Submit"
-            </div>
-        </form>
+        <h2 class="center-par">Edit Profile</h2>
+        <div class="login_reg_form_div">
+            <form action="/update/profile/" method="post" id="login_reg_form">
+                <div>
+                    <label>
+                        Username:
+                        <input type="text" name="username" value="{{logged_in_user.username}}">
+                    </label>
+                    <label>
+                        Email:
+                        <input type="email" name="email" value="{{logged_in_user.email}}">
+                    </label>
+                    <input type="submit" value="Submit"
+                </div>
+            </form>
+        </div>
 
     </main>
     <footer>

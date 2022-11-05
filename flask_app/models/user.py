@@ -1,4 +1,4 @@
-from sqlite3 import connect
+
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 from flask_app.models import team
@@ -15,8 +15,14 @@ class User:
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.team = []
-        self.weapon = None
+        # self.team = []
+        # self.weapon = None
+        self.created_teams = []
+        self.characters = []
+        # characters gathered from a join query
+        # select usere where
+        # join characters wehre user.id = user_id
+        # create user instance, loop through to create instances of characters to append to user.characters list
 
 
 
@@ -157,7 +163,7 @@ class User:
                 flash("First Name must not contain more than 10 character")
             return is_valid
 
-
+# ***************************CONNECTION********************************
     
     @classmethod
     def get_user_with_team(cls, data):
