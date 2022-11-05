@@ -1,6 +1,7 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 from flask_app.models import user
+from flask_app.models import weapon
 
 
 class Team:
@@ -10,18 +11,20 @@ class Team:
         self.name = data['name']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        self.creator_id = data['creator_id']
         self.on_team = []
+        # self.creator= None
 
 
 # **************************************CREATE******************************
 
     @classmethod
-    def save_team(cls, data):
+    def create_team(cls, data):
         query = """
         INSERT INTO team
-        (name, user_id)
+        (name, creator_id)
         VALUES
-        (%(name)s, %(user_id)s)
+        (%(name)s, %(creator_id)s)
         ;"""
         return connectToMySQL(cls.db).query_db(query, data)
 
@@ -42,10 +45,11 @@ class Team:
     @classmethod
     def get_a_team(cls, data):
         query = """
-        SELCT * FROM team
+        SELECT * FROM team
         WHERE id = %(id)s
         ;"""
         results = connectToMySQL(cls.db).query_db(query, data)
+        print(results)
         if len(results)<1:
             return False
         return cls(results[0])
@@ -54,13 +58,13 @@ class Team:
     def get_team_with_users(cls, data):
         query = """
         SELECT * FROM team
-        LEFT JOIN user_has_team
-        ON user_has_team.team_id = team.id
+        LEFT JOIN loadout
+        ON loadout.team_id = team.id
         LEFT JOIN user 
-        ON user_has_team.user_id = user.id
+        ON loadout.user_id = user.id
         WHERE team.id = %(id)s
         ;"""
-        results = connectToMySQL('user').query_db(query, data)
+        results = connectToMySQL(cls.db).query_db(query, data)
         team = cls(results[0])
         for row_from_db in results:
             user_data = {
@@ -75,7 +79,7 @@ class Team:
                 "team_id":data["id"],
                 "user_id":teammember.id
             }
-            # teammember.weapon = user.User.getWeapon(weap_data)
+            teammember.weapon = weapon.Weapon.get_user_with_weapon(weap_data)
             team.on_team.append(user.User(user_data))
         return team
 
@@ -105,7 +109,7 @@ class Team:
     @staticmethod
     def validate_team(team_id):
         is_valid = True
-
+        
         if len(team_id['name'])<=2:
             is_valid=False
             flash("The name of this team needs to be at least 2 characters.")

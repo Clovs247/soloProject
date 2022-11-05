@@ -29,7 +29,9 @@
 
     <div class="dash">
         
-            <a href="">Image</a>
+            <a href="">
+                <img src="{{ url_for('static',filename='img/char_icons/O.R.C.A._icon.png') }}" alt="O.R.C.A">
+            </a>
         
             <a href="/dashboard/" class="link">Home</a>
         
@@ -56,7 +58,11 @@
                 </label>
                 <label>
                     Weapon Choice:
-                    
+                    <select name="" id="">
+                        {% for weapon in all_weapons %}
+                            <option value="{{weapon.id}}">{{weapon.weapon_name}}</option>
+                        {% endfor %}
+                    </select>
                 </label>
                 <input type="hidden" name="user_id" value="{{ logged_in_user.id }}">
                 <input type="submit" value="Create">

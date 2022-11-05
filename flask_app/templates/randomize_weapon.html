@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Splatsville Dashboard</title>
 </head>
+
+
 <body>
 
     {% with messages = get_flashed_messages() %}
@@ -25,36 +27,26 @@
     </header>
 
 
+    <div class="dash">
+        
+            <a href="/dashboard/" class="link">Home</a>
+        
+            <a href="/dashboard/maps/" class="link">All Maps</a>
+        
+            <a href="/dashboard/weapons/" class="link">All Weapons</a>
+        
+            <a href="/all-teams/" class="link">All Teams</a>
+
+            <a href="/create/team/" class="link">Create Team</a>
+        
+            <a href="" class="link">Patch Notes</a>
+        
+    </div>
 
     <main>
-        
-        <div class="dash">
-            
-                <a href="">
-                    <img src="{{ url_for('static',filename='img/char_icons/O.R.C.A._icon.png') }}" alt="O.R.C.A">
-                </a>
-            
-                <a href="/dashboard/maps/" class="link">All Maps</a>
-            
-                <a href="/dashboard/weapons/" class="link">All Weapons</a>
-            
-                <a href="/all-teams/" class="link">All Teams</a>
-            
-                <a href="/create/team/" class="link">Create a Team</a>
-            
-                <a href="" class="link">Patch Notes</a>
-            
-        </div>
-        <h1 class="center-par">{{logged_in_user.username}}</h1>
-        <h2 class="center-par">Welcome to Splatsville</h2>
     
     
     </main>
-
-
-        
-        
-
     
     <footer>
 
@@ -62,4 +54,3 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
 </html>
-

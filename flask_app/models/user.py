@@ -79,10 +79,6 @@ class User:
             return False
         return cls(results[0])
 
-    @classmethod
-    def getWeapon():
-        pass
-    
 
 
 # *********************UPDATE***************************************

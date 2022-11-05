@@ -27,7 +27,9 @@
 
     <div class="dash">
         
-            <a href="">Image</a>
+            <a href="">
+                <img src="{{ url_for('static',filename='img/char_icons/O.R.C.A._icon.png') }}" alt="O.R.C.A">
+            </a>
         
             <a href="/dashboard/" class="link">Home</a>
         
@@ -50,7 +52,39 @@
         
 
         <h2 class="center-par">All Teams</h2>
-    
+        <table>
+            <tr>
+                <th>
+                    Team Names
+                </th>
+                <th>
+                    
+                </th>
+                <th>
+                    Team Captain
+                </th>
+                <th>
+                    Needing Teammates
+                </th>
+            </tr>
+            {% for team in all_teams%}
+                <tr>
+                    <td>
+                        <p>{{ team.name }}</p>
+                    </td>
+                    <td>
+                        <a href="/team/{{team.id}}/view/">View</a>
+                    </td>
+                    <td>
+                        <p>{{ team.creator_id }}</p>
+                    </td>
+                    <td>
+                        <p>Placeholder</p>
+                    </td>
+                </tr>
+                
+            {% endfor %}
+        </table>
     
     </main>
 
