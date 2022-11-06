@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Splatsville Dashboard</title>
 </head>
-<body>
+<body id="team-back" >
 
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -22,13 +22,10 @@
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         </nav>
-    </header>
-
-
-    <div class="dash">
+        <div class="dash">
         
             <a href="">
-                <img src="{{ url_for('static',filename='img/char_icons/O.R.C.A._icon.png') }}" alt="O.R.C.A">
+                <img src="{{ url_for('static',filename='img/char_icons/O.R.C.A._icon.png') }}" alt="O.R.C.A" id="orca">
             </a>
         
             <a href="/dashboard/" class="link">Home</a>
@@ -42,6 +39,10 @@
             <a href="" class="link">Patch Notes</a>
         
     </div>
+    </header>
+
+
+    
 
 
 
@@ -49,6 +50,31 @@
 
         <h1 class="center-par">Your Teams</h1>
         
+        <table>
+            <tr>
+                <th>
+                    Team Name
+                </th>
+                <th>
+                    View
+                </th>
+            </tr>
+            {% for team in all_teams%}
+                {% if logged_in_user.id == team.creator_id %}
+                <tr>
+                    <td>
+                        {{ team.name }}
+                    </td>
+                    <td>
+                        <a href="/team/{{team.id}}/view/">View</a>
+                    </td>
+                    <td>
+                        <a href="/team/{{team.id}}/delete/">Delete</a>
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
         
 
         <h2 class="center-par">All Teams</h2>
@@ -61,10 +87,7 @@
                     
                 </th>
                 <th>
-                    Team Captain
-                </th>
-                <th>
-                    Needing Teammates
+                    List Of Teammates
                 </th>
             </tr>
             {% for team in all_teams%}
@@ -76,10 +99,11 @@
                         <a href="/team/{{team.id}}/view/">View</a>
                     </td>
                     <td>
-                        <p>{{ team.creator_id }}</p>
-                    </td>
-                    <td>
-                        <p>Placeholder</p>
+                        
+                            {% for member in team.on_team %}
+                                <p>{{member.username}}</p>
+                            {% endfor %}
+                        
                     </td>
                 </tr>
                 

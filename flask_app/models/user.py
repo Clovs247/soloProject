@@ -16,7 +16,7 @@ class User:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         # self.team = []
-        # self.weapon = None
+        self.weapon = None
         self.created_teams = []
         self.characters = []
         # characters gathered from a join query

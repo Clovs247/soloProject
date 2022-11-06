@@ -19,12 +19,26 @@ class Team:
 # **************************************CREATE******************************
 
     @classmethod
-    def create_team(cls, data):
+    def create_team(cls, team_data):
         query = """
         INSERT INTO team
         (name, creator_id)
         VALUES
-        (%(name)s, %(creator_id)s)
+        (%(name)s, %(user_id)s)
+        ;"""
+        team_id =  connectToMySQL(cls.db).query_db(query, team_data)
+        team_data["team_id"] = team_id
+        cls.join_team(team_data)
+        return team_id
+
+
+    @classmethod
+    def join_team(cls, data):
+        query="""
+        INSERT INTO loadout
+        (team_id, user_id, weapon_id)
+        VALUES
+        (%(team_id)s,%(user_id)s,%(weapon_id)s)
         ;"""
         return connectToMySQL(cls.db).query_db(query, data)
 
@@ -39,7 +53,12 @@ class Team:
         results = connectToMySQL(cls.db).query_db(query)
         roster = []
         for row in results:
-            roster.append(cls(row))
+            team_now = cls(row)
+            data = {
+                'team_id': team_now.id
+            }
+            team_now.on_team = cls.get_members(data)
+            roster.append(team_now)
         return roster
 
     @classmethod
@@ -49,10 +68,29 @@ class Team:
         WHERE id = %(id)s
         ;"""
         results = connectToMySQL(cls.db).query_db(query, data)
-        print(results)
+        # print(results)
+        roster = []
         if len(results)<1:
             return False
-        return cls(results[0])
+        else:
+            # print("&&&&&&&&&&&&&&&", results)
+            team_now = cls(results)
+            team_data={
+                'team_id': team_now.id
+            }
+            team_now.on_team = cls.get_members(team_data)
+            roster.append(team_now)
+            return cls(results[0])
+
+    
+    @classmethod
+    def get_teams_made_by_user(cls, data):
+        query = """
+        SELECT * FROM team
+        WHERE creator_id = %(creator_id)s
+        ;"""
+        results = connectToMySQL(cls.db).query_db(query, data)
+        return results
 
     @classmethod
     def get_team_with_users(cls, data):
@@ -65,14 +103,15 @@ class Team:
         WHERE team.id = %(id)s
         ;"""
         results = connectToMySQL(cls.db).query_db(query, data)
-        team = cls(results[0])
+        club = cls(results[0])
         for row_from_db in results:
             user_data = {
                 "id":row_from_db["user.id"],
-                "username":row_from_db["user.username"],
-                "email":row_from_db["user.email"],
-                "created_at":row_from_db["created_at"],
-                "updated_at":row_from_db["updated_at"]
+                "username":row_from_db["username"],
+                "email":row_from_db["email"],
+                "password": "",
+                "created_at":row_from_db["user.created_at"],
+                "updated_at":row_from_db["user.updated_at"]
             }
             teammember = user.User(user_data)
             weap_data = {
@@ -80,9 +119,23 @@ class Team:
                 "user_id":teammember.id
             }
             teammember.weapon = weapon.Weapon.get_user_with_weapon(weap_data)
-            team.on_team.append(user.User(user_data))
-        return team
+            club.on_team.append(teammember)
+            # print("&&&&&&&&&&&&&&&&&&", len(club.on_team))
+        return club
 
+    @classmethod
+    def get_members(cls,data):
+        query="""
+        SELECT * FROM loadout
+        JOIN user 
+        ON loadout.user_id = user.id
+        WHERE loadout.team_id = %(team_id)s
+        ;"""
+        results = connectToMySQL(cls.db).query_db(query, data)
+        members=[]
+        for row in results:
+            members.append(user.User(row))
+        return members
 
 # **************************************UPDATE******************************
 
@@ -105,14 +158,49 @@ class Team:
         ;"""
         return connectToMySQL(cls.db).query_db(query, data)
 
+    @classmethod
+    def leave_team(cls, data):
+        query="""
+        DELETE FROM loadout
+        WHERE user_id = %(user_id)s
+        AND team_id = %(team_id)s
+        ;"""
+        return connectToMySQL(cls.db).query_db(query, data)
 
+
+
+# ***********************************VALIDATE***************************************
     @staticmethod
     def validate_team(team_id):
         is_valid = True
-        
+        query="""
+        SELECT * FROM team
+        WHERE name = %(name)s
+        ;"""
+        results = connectToMySQL(Team.db).query_db(query, team_id)
+        if len(results)>1:
+            is_valid = False
+            flash("This Team name already exists, please choose another.")
         if len(team_id['name'])<=2:
             is_valid=False
             flash("The name of this team needs to be at least 2 characters.")
         
         return is_valid
 
+    @staticmethod
+    def validate_join(canidate):
+        query="""
+        SELECT * FROM loadout
+        WHERE user_id = %(user_id)s
+        AND team_id = %(team_id)s
+        ;"""
+        results = connectToMySQL(Team.db).query_db(query, canidate)
+        if len(results)>0:
+            flash("You can't join the team twice")
+            return False
+        
+        return True
+
+
+
+    

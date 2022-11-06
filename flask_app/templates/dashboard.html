@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Splatsville Dashboard</title>
 </head>
-<body>
+<body id="splatsville-back">
 
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -21,17 +21,12 @@
     <header>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
-        </nav>
-    </header>
-
-
-
-    <main>
         
+        </nav>
         <div class="dash">
             
                 <a href="">
-                    <img src="{{ url_for('static',filename='img/char_icons/O.R.C.A._icon.png') }}" alt="O.R.C.A">
+                    <img src="{{ url_for('static',filename='img/char_icons/O.R.C.A._icon.png') }}" alt="O.R.C.A" id="orca">
                 </a>
             
                 <a href="/dashboard/maps/" class="link">All Maps</a>
@@ -45,6 +40,13 @@
                 <a href="" class="link">Patch Notes</a>
             
         </div>
+    </header>
+
+
+
+    <main>
+        
+        
         <h1 class="center-par">{{logged_in_user.username}}</h1>
         <h2 class="center-par">Welcome to Splatsville</h2>
     

@@ -30,7 +30,7 @@
     <div class="dash">
         
             <a href="">
-                <img src="{{ url_for('static',filename='img/char_icons/O.R.C.A._icon.png') }}" alt="O.R.C.A">
+                <img src="{{ url_for('static',filename='img/char_icons/O.R.C.A._icon.png') }}" alt="O.R.C.A" id="orca">
             </a>
         
             <a href="/dashboard/" class="link">Home</a>
@@ -54,11 +54,47 @@
         <div>
             <h1>{{club.name}}</h1>
             
-
-            {% for member in club.on_team%}
-                <p>{{member.name}}</p>
-            {% endfor %}
+            <p hidden>{{club.creator_id}}</p>
+            <table>
+                <tr>
+                    <th>
+                        Member Names
+                    </th>
+                    <th>
+                        Weapon Choice
+                    </th>
+                </tr>
+                {% for member in club.on_team%}
+                    <tr>
+                        <td>
+                            <p>{{member.username}}</p>
+                        </td>
+                        <td>
+                            <p>{{member.weapon.weapon_name}}</p>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
             
+            {% if club.on_team|length < 4 %}
+                
+                <form action="/join/{{club.id}}/form/" method="post">
+                    <label>
+                        Weapon Choice:
+                        <select name="weapon_id">
+                            {% for weapon in all_weapons %}
+                            <option value="{{weapon.id}}">{{weapon.weapon_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    
+                    
+                    <input type="submit" value="Join">
+                </form>
+            {% else %}
+                <a href="">Leave</a>
+                
+            {% endif %}
             
             
         </div>
