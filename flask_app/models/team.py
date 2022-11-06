@@ -27,6 +27,7 @@ class Team:
         (%(name)s, %(user_id)s)
         ;"""
         team_id =  connectToMySQL(cls.db).query_db(query, team_data)
+        print("&&&&&&&&&&&&&&&&&&", team_id)
         team_data["team_id"] = team_id
         cls.join_team(team_data)
         return team_id
