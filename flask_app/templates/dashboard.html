@@ -19,10 +19,17 @@
     {% endwith %}
 
     <header>
+        <div class="newnav">
+        
+            <a href="/edit/profile/" class="link" id="loginout">Edit Profile</a>
+            
+            <a href="/logout/" class="link" id="loginout">Logout</a>
+        </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         
         </nav>
+        <h1 class="welcome-par">Welcome {{logged_in_user.username}}</h1>
         <div class="dash">
             
                 <a href="">
@@ -34,21 +41,19 @@
                 <a href="/dashboard/weapons/" class="link">All Weapons</a>
             
                 <a href="/all-teams/" class="link">All Teams</a>
-            
+                
                 <a href="/create/team/" class="link">Create a Team</a>
-            
+                
                 <a href="" class="link">Patch Notes</a>
-            
-        </div>
+                
+            </div>
     </header>
 
 
 
     <main>
+    
         
-        
-        <h1 class="center-par">{{logged_in_user.username}}</h1>
-        <h2 class="center-par">Welcome to Splatsville</h2>
     
     
     </main>

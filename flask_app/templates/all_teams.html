@@ -19,6 +19,11 @@
     {% endwith %}
 
     <header>
+        <div class="newnav">
+            <a href="/edit/profile/" class="link" id="loginout">Edit Profile</a>
+            
+            <a href="/logout/" class="link" id="loginout">Logout</a>
+        </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         </nav>
@@ -38,12 +43,8 @@
         
             <a href="" class="link">Patch Notes</a>
         
-    </div>
+        </div>
     </header>
-
-
-    
-
 
 
     <main>
@@ -51,29 +52,32 @@
         <h1 class="center-par">Your Teams</h1>
         
         <table>
-            <tr>
-                <th>
-                    Team Name
-                </th>
-                <th>
-                    View
-                </th>
-            </tr>
-            {% for team in all_teams%}
-                {% if logged_in_user.id == team.creator_id %}
+            <tbody>
+
                 <tr>
-                    <td>
-                        {{ team.name }}
-                    </td>
-                    <td>
-                        <a href="/team/{{team.id}}/view/">View</a>
-                    </td>
-                    <td>
-                        <a href="/team/{{team.id}}/delete/">Delete</a>
-                    </td>
+                    <th>
+                        Team Name
+                    </th>
+                    <th>
+                        View
+                    </th>
                 </tr>
-                {% endif %}
-            {% endfor %}
+                {% for team in all_teams%}
+                    {% if logged_in_user.id == team.creator_id %}
+                    <tr class="teams-made">
+                        <td>
+                            <p>{{ team.name }}</p>
+                        </td>
+                        <td>
+                            <a href="/team/{{team.id}}/view/" class="view-delete">View</a>
+                        </td>
+                        <td>
+                            <a href="/team/{{team.id}}/delete/" class="view-delete">Delete</a>
+                        </td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
         </table>
         
 
@@ -84,26 +88,21 @@
                     Team Names
                 </th>
                 <th>
-                    
-                </th>
-                <th>
                     List Of Teammates
                 </th>
             </tr>
             {% for team in all_teams%}
-                <tr>
+                <tr class="all-teams">
                     <td>
-                        <p>{{ team.name }}</p>
+                        <a href="/team/{{team.id}}/view/" class="view">{{ team.name }}</a>
                     </td>
-                    <td>
-                        <a href="/team/{{team.id}}/view/">View</a>
-                    </td>
-                    <td>
-                        
-                            {% for member in team.on_team %}
-                                <p>{{member.username}}</p>
-                            {% endfor %}
-                        
+                    <!-- <td>
+                        <a href="/team/{{team.id}}/view/" class="view-delete">View</a>
+                    </td> -->
+                    <td class="team-members">
+                        {% for member in team.on_team %}
+                            <p>{{member.username}}</p>
+                        {% endfor %}
                     </td>
                 </tr>
                 

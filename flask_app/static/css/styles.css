@@ -1,23 +1,514 @@
-/* main{
-    margin: 20px;
-    margin-bottom: 0px;
-    margin-top: 0px;
+
+
+/* *********************************CLOCK********************************************************************************* */
+
+.clock{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-image:url(/static/img/backgrounds/Graffiti.jpg);
+    background-color: slategrey;
+    /* position: relative; */
+    padding: 70px;
+    border-radius: 100%;
+    background-size: contain;
+}
+.time{
+    font-size: 5vw;
+    font-weight: bold;
+    color: #FFE400;
+    /* color: #272727; */
+    /* color: #747474; */
+    font-style: oblique;
+}
+.date-time{
+    font-size: 3vw;
+    /* color: #FFE400; */
+    color: #14A76C;
+    font-style: oblique;
+}
+@media screen and (max-width: 768px){
+    .time{
+        font-size: 4vw;
+    }
+}
+
+/* *********************************FORMS********************************************************************************* */
+
+input[type=text] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border-radius: 25px;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+input[type=email] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border-radius: 25px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+input[type=password] {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border-radius: 25px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+input[type=submit] {
+    padding: 16px 32px;
+    padding: 10px;
+    /* background-color: rebeccapurple; */
+    border: 2px solid black;
+    border-radius: 25px;
+    cursor: pointer;background-color: #14A76C;
+    font-weight: 1000;
+}
+/* input[type=button]{
+    padding: 1vw 2vw;
+    margin: 5px;
+    box-sizing: border-box;
+    border: none;
 } */
-/* html{
-    height: 100%;
+.weapon-selection{
+    width: 80%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 25px;
+}
+
+/* *********************************NEW USER LOGIN FORM********************************************************************************* */
+
+/* #welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 10vw;
+    background-color: olivedrab;
+    border-radius: 25px;
+    width: auto;
+} */
+#login_reg{
     display: flex;
     justify-content: center;
-} */
+    align-items: center;
+    font-size: 3vw;
+    background-color: rgba(0,0,0,0.50);
+    padding: 10px;
+    border-radius: 50px;
+    color: #FFE400;
+}
+#login_reg_form_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3vw;
+    background-color: rgba(0,0,0,0.50);
+    padding: 10px;
+    border-radius: 50px;
+    color: #FFE400;
+}
+#login_reg_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3vw;
+}
+#new_team_form_div{
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(0,0,0,0.50);
+    padding: 10px;
+    border-radius: 50px;
+    color: #FFE400;
+}
+#new_team_form{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+}
+#new_team_form label{
+    display: flex;
+    flex-direction: column;
+}
+
+/* *********************************MENUS********************************************************************************* */
+
+header{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    background-image:url(/static/img/backgrounds/Logos.jpg);
+    background-size: fill;
+    padding: 20px;
+    width: auto;
+    position: sticky;
+    padding-bottom: 5px;
+    border-radius: 50px;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 50px;
+}
+.newnav{
+    display: flex;
+    justify-content:space-between;
+    /* background-image:url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg); */
+    /* background-color:darkslateblue; */
+    color: whitesmoke;
+    font-size: 2vw;
+    position: static;
+    font-weight: 1000;
+}
+.newnav a:hover{
+    display: flex;
+    justify-content: space-evenly;
+    color: black;
+    /* background-color: whitesmoke; */
+    font-size: 2vw;
+    /* position: relative; */
+}
+.dash{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 50px;
+    align-items: center;
+    position: sticky;
+    font-weight: 1000;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color:darkolivegreen;
+    background-image:url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg);
+}
+#loginout{
+    background-color: white;
+}
+.view-delete{
+    text-decoration-line: none;
+    padding: 7px;
+    border: 1px solid black;
+    background-color: #F5B842;
+    border-radius: 75px;
+}
+.view{
+    text-decoration-line: none;
+    padding: 7px;
+    border: 1px solid black;
+    background-color: #F5B842;
+    border-radius: 75px;
+}
+
+/* *********************************MAIN ELEMENTS****************************************************************** */
+
 body{
+    width: auto;
     margin: 10px;
 }
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 70px;
+    font-size: 16px;
+}
+.error-par{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    background-color: rgba(0,0,0,0.50);
+    font-size: 5vw;
+    padding: 10px;
+    border-radius: 50px;
+    color: #ff4d00;
+    margin: 20px;
+}
+.center-par{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    background-color: rgba(0,0,0,0.50);
+    font-size: 35px;
+    padding: 10px;
+    border-radius: 50px;
+    color: #FFE400;
+}
+.welcome-par{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 300px; */
+    position: relative;
+    background-color: rgba(0,0,0,0.50);
+    font-size: 5vw;
+    padding: 10px;
+    border-radius: 50px;
+    color: #FFE400;
+}
+.link{
+    text-decoration-line: none;
+    padding: 1vw;
+    border: 1px solid black;
+    background-color: #14A76C;
+    
+    border-radius: 25px;
+    /* color: #F5B842; */
+    color: #222629;
+}
+.link:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+table{
+    display: flex;
+    background-color: white;
+    width: 75%;
+    justify-content: center;
+    padding: 20px;
+    background-image:url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg);
+    border-radius: 50px;
+}
+table p{
+    font-size: 2vw;
+}
+tbody{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    border-radius: 50px;
+    /* background-color: white; */
+    /* justify-content: space-between; */
+}
+th{
+    background-color: rgba(0,0,0,0.50);
+    border-radius: 50px;
+    color: #FFE400;
+    padding: 20px;
+    border-radius: 50px 50px 10px 10px;
+}
+tr{
+    display: flex;
+    justify-content: center;
+}
+td{
+    display: flex;
+    flex-direction: column;
+}
+.teams-made{
+    /* background-color: rgba(255, 255, 255, 0.445); */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.445);
+    border-radius: 50px 50px 10px 10px;
+    padding: 15px;
+    font-size:20px;
+}
+.teams-made p{
+    font-size: 18px;
+    background-color: #272727;
+    padding: 7px;
+    color: #9d0bd2;
+    border-radius: 40px;
+}
+.all-teams{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.445);
+    border-radius: 50px 50px 10px 10px;
+    font-size: 20px;
+}
+.all-teams p{
+    font-size: 18px;
+    background-color: #272727;
+    color: #9d0bd2;
+    padding: 7px;
+    border-radius: 40px;
+}
+.team-members{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px;
+    /* padding: 10px; */
+    width: 100px;
+}
+.team-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFE400;
+    font-size: 20px;
+}
+.team-list-table{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.445);
+    border-radius: 50px 50px 10px 10px;
+}
+.team-list-table td{
+    border-radius: 50px 50px 10px 10px;
+}
+.join-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.join-form label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120%;
+}
+#submit{
+    width: 40%;
+}
+
+
+/* *********************************MAPS AND WEAPONS****************************************************************** */
+
+.map-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffe60027;
+    border-radius: 80px;
+    margin: 50px;
+}
+.maps{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.all-map-label{
+    background-color: #272727;
+    border-radius: 5px 5px 50px 50px;
+    padding: 20px;
+    margin: 10px;
+    margin-top: 0px;
+    font-size: 50px;
+    color: #FFE400;
+    opacity: .9;
+    background-image:url(/static/img/backgrounds/Repeating_Background.jpg);
+}
+.map-label{
+    background-color: #272727;
+    border-radius: 50px 50px 50px 50px;
+    padding: 20px;
+    margin: 10px;
+    opacity: .9;
+    background-image:url(/static/img/backgrounds/Repeating_Background.jpg);
+}
+.map-label p{
+    font-size: 20px;
+    background-color: #14A76C;
+    color: black;
+    /* padding: 5px; */
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    font-style: oblique;
+    opacity: 1;
+}
+.map-imgs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 5px solid #FFE400;
+    /* border: 5px solid #272727; */
+    border-radius: 25px;
+    opacity: 1;
+    height: 225px;
+    width: 400px;
+    padding: 5px;
+}
+.weapon-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.all-weapons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #272727;
+    border-radius: 50px 50px 50px 50px;
+    padding: 20px;
+    margin: 10px;
+    opacity: .9;
+    /* background-image:url(/static/img/backgrounds/Repeating_Background.jpg); */
+}
+.attachments{
+    display: flex;
+    justify-content: space-between;
+}
+.weapon-label{
+    background-color: #272727;
+    border-radius: 50px 50px 50px 50px;
+    border: 5px solid #14A76C;
+    padding: 20px;
+    margin: 10px;
+    opacity: .9;
+    background-image:url(/static/img/backgrounds/Repeating_Background.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.weapon-label p{
+    font-size: 20px;
+    background-color: #14A76C;
+    color: #5f07ed;
+    /* color: black; */
+    /* padding: 5px; */
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 25px;
+    font-style: oblique;
+    
+}
+
+/* *********************************IMAGES*************************************************** */
+
 #new-back{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
     background-repeat: repeat;
     /* align-items: center; */
     justify-content: center;
-    position:static;
-    height: 150vh;
+    position:relative;
+    /* height: 150vh; */
     background-size:contain;
     
 }
@@ -65,8 +556,8 @@ body{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
     background-repeat: repeat;
     align-items: center; 
-    /* position: relative;
-    height: max; */
+    position: relative;
+    height: max;
     background-size: cover;
 }
 #weapons-back{
@@ -77,199 +568,35 @@ body{
     height: max; */
     background-size: cover;
 }
-
-#welcome {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10vw;
-}
-
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image:url(/static/img/backgrounds/Logos.jpg);
-    background-size: contain;
-}
-nav{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.newnav{
-    display: flex;
-    justify-content: space-evenly;
-    /* background-color:darkslateblue; */
-    color: whitesmoke;
-    font-size: 4vw;
-    /* position: relative; */
-}
-.newnav a:hover{
-    display: flex;
-    justify-content: space-evenly;
-    color: black;
-    /* background-color: whitesmoke; */
-    font-size: 4vw;
-    /* position: relative; */
-}
-
-.clock{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
-    /* background-color: slategrey; */
-    /* position: relative; */
-}
-
-.time{
-    font-size: 3vw;
-    font-weight: bold;
-
-}
-
-.date-time{
-    font-size: 2vw;
-}
-
-@media screen and (max-width: 768px){
-    .time{
-        font-size: 4vw;
-    }
-}
-
-#login_reg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3vw;
-}
-
-#login_reg_form_div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 3vw;
-}
-#login_reg_form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 3vw;
-}
-
-input[type=text] {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 2px solid black;
-}
-input[type=email] {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 2px solid black;
-}
-input[type=password] {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 2px solid black;
-}
-input[type=submit] {
-    padding: 16px 32px;
-    padding: 10px;
-    /* background-color: rebeccapurple; */
-    border: 2px solid black;
-}
-/* input[type=button]{
-    padding: 1vw 2vw;
-    margin: 5px;
-    box-sizing: border-box;
-    border: none;
-} */
-
-/* label{
-    width: 100%;
-    border: 2px solid black;
-} */
-
-.dash{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    /* width: 100%; */
-    align-items: center;
-    position: sticky;
-    left: 0;
-    right: 0;
-    top: 0;
-    background-color:lightcoral;
-}
-
-.center-par{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    position: relative;
-}
-
-.link{
-    text-decoration-line: none;
-    padding: 1vw;
-    border: 2px solid slategray;
-    background-color: azure;
-}
-
-.maps{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-}
-.map-imgs{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 225px;
-    width: 400px;
-}
-
-.all-weapons{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-}
 .weapon-img{
     height: 80px;
     width: 100px;
+    background-color: #434a3c;
+    border-radius: 50px;
+    padding: 10px;
 } 
 .weapon-sub{
     height: 30px;
     width: 30px;
+    background-color: #434a3c;
+    border-radius: 50px;
+    padding: 10px;
 } 
 .weapon-spe{
     height: 30px;
     width: 30px;
-}
-table{
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    background-color: white;
+    background-color: #434a3c;
+    border-radius: 50px;
+    padding: 10px;
 }
 #orca{
     height: 90px;
     
 }
+
+/* *********************************UNSORTED OR NEW*************************************************** */
+
+
+
+
+

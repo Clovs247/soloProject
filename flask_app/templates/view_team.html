@@ -11,16 +11,15 @@
 
 <body id="team-back">
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong>WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p>{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    
 
     <header>
+        <div class="newnav">
+        
+            <a href="/edit/profile/" class="link" id="loginout">Edit Profile</a>
+            
+            <a href="/logout/" class="link" id="loginout">Logout</a>
+        </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         </nav>
@@ -46,43 +45,57 @@
     </header>
 
 
-    
-
-
-
     <main>
 
-        <div>
-            <h1>{{club.name}}</h1>
-            
+        <div class="team-list">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <strong class="error-par">Wait a moment...</strong>
+                    {% for message in messages %}
+                        <p class="error-par">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <h1 class="center-par">{{club.name}}</h1>
             <p hidden>{{club.creator_id}}</p>
             <table>
-                <tr>
-                    <th>
-                        Member Names
-                    </th>
-                    <th>
-                        Weapon Choice
-                    </th>
-                </tr>
-                {% for member in club.on_team%}
+                <tbody>
                     <tr>
-                        <td>
-                            <p>{{member.username}}</p>
-                        </td>
-                        <td>
-                            <p>{{member.weapon.weapon_name}}</p>
-                        </td>
+                        <th>
+                            <p>
+                                Member Names
+                            </p>
+                        </th>
+                        <th>
+                            <p>
+                                Weapon Choice
+                            </p>
+                        </th>
                     </tr>
-                {% endfor %}
+                    {% for member in club.on_team%}
+                        <tr class="team-list-table">
+                            <td>
+                                <p>{{member.username}}</p>
+                            </td>
+                            <td>
+                                <p>{{member.weapon.weapon_name}}</p>
+                            </td>
+                            {% if member.username == logged_in_user.username %}
+                                <td>
+                                    <a href="/team/{{club.id}}/leave" class="view-delete">Leave</a>
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
             </table>
             
             {% if club.on_team|length < 4 %}
-                
-                <form action="/join/{{club.id}}/form/" method="post">
+                <h3 class="center-par">Would you like to join?</h3>
+                <form action="/join/{{club.id}}/form/" method="post" class="join-form">
                     <label>
                         Weapon Choice:
-                        <select name="weapon_id">
+                        <select name="weapon_id" class="weapon-selection">
                             {% for weapon in all_weapons %}
                             <option value="{{weapon.id}}">{{weapon.weapon_name}}</option>
                             {% endfor %}
@@ -90,10 +103,10 @@
                     </label>
                     
                     
-                    <input type="submit" value="Join">
+                    <input type="submit" value="Join" id="submit">
                 </form>
             {% else %}
-                <a href="">Leave</a>
+                
                 
             {% endif %}
             

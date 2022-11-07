@@ -182,7 +182,7 @@ class Team:
         if len(results)>1:
             is_valid = False
             flash("This Team name already exists, please choose another.")
-        if len(team_id['name'])<=2:
+        if len(team_id['name'])<=1:
             is_valid=False
             flash("The name of this team needs to be at least 2 characters.")
         
@@ -197,7 +197,7 @@ class Team:
         ;"""
         results = connectToMySQL(Team.db).query_db(query, canidate)
         if len(results)>0:
-            flash("You can't join the team twice")
+            flash("You can't join the same team twice")
             return False
         
         return True

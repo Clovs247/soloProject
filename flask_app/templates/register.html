@@ -19,13 +19,16 @@
     {% endwith %}
 
     <header>
+        <div class="newnav">
+            <a href="/" class="link"  id="loginout">Home</a>
+        </div>
         <nav>
             {% block menu %} {% include 'login_reg_menu.html' %} {% endblock menu %}
         </nav>
     </header>
     <main>
 
-        <h1 id="welcome">Welcome to Splatsville</h1>
+        <h1 class="center-par">Welcome to Splatsville</h1>
 
         <h3 id="login_reg">Register</h3>
         <div id="login_reg_form_div">

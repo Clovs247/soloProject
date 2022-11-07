@@ -21,6 +21,12 @@
     {% endwith %}
 
     <header>
+        <div class="newnav">
+        
+            <a href="/edit/profile/" class="link" id="loginout">Edit Profile</a>
+            
+            <a href="/logout/" class="link" id="loginout">Logout</a>
+        </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         </nav>
@@ -43,29 +49,26 @@
         </div>
     </header>
 
-
-    
-
-
-
     <main>
 
         <h1 class="center-par">Create a Team</h1>
-        <div id="login_reg_form_div">
-            <form action="/create/team/form/" method="post" class="login_reg_form">
+        <div id="new_team_form_div">
+            <form action="/create/team/form/" method="post" class="new_team_form">
                 <label>
                     Team Name:
                     <input type="text" name="name">
                 </label>
                 <label>
                     Weapon Choice:
-                    <select name="weapon_id" id="">
+                    <select name="weapon_id" class="weapon-selection">
                         {% for weapon in all_weapons %}
                             <option value="{{weapon.id}}">{{weapon.weapon_name}}</option>
                         {% endfor %}
                     </select>
                 </label>
-                <input type="submit" value="Create">
+                <label>
+                    <input type="submit" value="Create">
+                </label>
             </form>
             
         </div>

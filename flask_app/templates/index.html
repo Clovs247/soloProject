@@ -9,13 +9,19 @@
 </head>
 <body id="new-back">
     <header>
+        <div class="newnav">
+
+            <a href="/register/form"  class="link" id="loginout">Register</a>
+            
+            <a href="/login/form"  class="link" id="loginout">Login</a>
+        </div>
         <nav>
             {% block menu %} {% include 'menu.html' %} {% endblock menu %}
         </nav>
     </header>
     <main>
 
-        <h1 id="welcome">Welcome to Splatsville</h1>
+        <h1 class="center-par">Welcome to Splatsville</h1>
 
     </main>
     <footer>
