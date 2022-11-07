@@ -9,14 +9,7 @@
 </head>
 <body id="splatsville-back">
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong>WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p>{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+
 
     <header>
         <div class="newnav">
@@ -52,17 +45,18 @@
 
 
     <main>
-    
-        
-    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <strong class="error-par">WAAAIIITTTTT</strong>
+            {% for message in messages %}
+                <p class="error-par">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     
     </main>
 
 
-        
-        
-
-    
     <footer>
 
     </footer>

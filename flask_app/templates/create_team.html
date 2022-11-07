@@ -5,20 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Splatsville Dashboard</title>
+    <title>Form a New Team</title>
 </head>
 
 
 <body id="make-team-back">
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong>WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p>{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+
 
     <header>
         <div class="newnav">
@@ -50,7 +43,14 @@
     </header>
 
     <main>
-
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <strong class="error-par">WAAAIIITTTTT</strong>
+            {% for message in messages %}
+                <p class="error-par">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
         <h1 class="center-par">Create a Team</h1>
         <div id="new_team_form_div">
             <form action="/create/team/form/" method="post" class="new_team_form">

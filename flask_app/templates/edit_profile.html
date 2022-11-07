@@ -5,30 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Splatsville Dashboard</title>
+    <title>Edit Profile</title>
 </head>
 <body id="profile-back">
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong>WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p>{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    
 
     <header>
+        <div class="newnav">
+            <a href="/dashboard/" class="link" id="loginout">Home</a>
+            <a href="/logout/" class="link" id="loginout">Logout</a>
+        </div>
         <nav>
             {% block menu %} {% include 'edit_menu.html' %} {% endblock menu %}
         </nav>
     </header>
     <main>
 
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <strong class="error-par">WAAAIIITTTTT</strong>
+            {% for message in messages %}
+                <p class="error-par">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
         <h2 class="center-par">Edit Profile</h2>
-        <div class="login_reg_form_div">
-            <form action="/update/profile/" method="post" id="login_reg_form">
-                <div>
+        <div class="new_team_form_div">
+            <form action="/update/profile/" method="post" class="new_team_form">
+                <div class="edit-profile">
                     <label>
                         Username:
                         <input type="text" name="username" value="{{logged_in_user.username}}">
@@ -37,7 +42,7 @@
                         Email:
                         <input type="email" name="email" value="{{logged_in_user.email}}">
                     </label>
-                    <input type="submit" value="Submit"
+                    <input type="submit" value="Submit">
                 </div>
             </form>
         </div>

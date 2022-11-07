@@ -11,43 +11,47 @@
 
 <body>
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong>WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p>{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+
 
     <header>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         </nav>
+    <div class="dash">
+        <a href="/dashboard/" class="link">Home</a>
+    
+        <a href="/dashboard/maps/" class="link">All Maps</a>
+        <a href="/dashboard/weapons/" class="link">All Weapons</a>
+    
+        <a href="/all-teams/" class="link">All Teams</a>
+        <a href="/create/team/" class="link">Create Team</a>
+    
+        <a href="" class="link">Patch Notes</a>
+        
+    </div>
     </header>
 
 
-    <div class="dash">
-        
-            <a href="/dashboard/" class="link">Home</a>
-        
-            <a href="/dashboard/maps/" class="link">All Maps</a>
-        
-            <a href="/dashboard/weapons/" class="link">All Weapons</a>
-        
-            <a href="/all-teams/" class="link">All Teams</a>
 
-            <a href="/create/team/" class="link">Create Team</a>
-        
-            <a href="" class="link">Patch Notes</a>
-        
-    </div>
 
     <main>
-    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <strong class="error-par">WAAAIIITTTTT</strong>
+        {% for message in messages %}
+            <p class="error-par">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
     
     </main>
-    
+    <div>
+        <div></div>
+
+    </div>
+    <div>
+        
+    </div>
     <footer>
 
     </footer>

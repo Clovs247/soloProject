@@ -5,18 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Splatsville Dashboard</title>
+    <title>Splatoon 3 Maps</title>
 </head>
 <body id="maps-back">
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong>WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p>{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    
 
     <header>
         <div class="newnav">
@@ -49,7 +42,14 @@
 
 
     <main>
-
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <strong class="error-par">WAAAIIITTTTT</strong>
+                {% for message in messages %}
+                    <p class="error-par">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
         <div class="map-container">
 
             <h1 class="all-map-label">All Maps</h1>

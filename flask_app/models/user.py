@@ -125,10 +125,10 @@ class User:
                 flash("Invalid Email Format")
             if len(user['username'])<1:
                 is_valid = False
-                flash("First Name must contain at least 1 character")
+                flash("Username must contain at least 1 character")
             if len(user['username'])>10:
                 is_valid = False
-                flash("First Name must not contain more than 10 character")
+                flash("Username must not contain more than 10 character")
             if len(user['password'])<8:
                 is_valid = False
                 flash("Password must have at least 8 characters")

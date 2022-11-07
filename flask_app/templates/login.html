@@ -9,14 +9,7 @@
 </head>
 <body id="log-reg-back">
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong>WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p>{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+
 
     <header>
         <div class="newnav">
@@ -27,7 +20,14 @@
         </nav>
     </header>
     <main>
-
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <strong class="error-par">WAAAIIITTTTT</strong>
+            {% for message in messages %}
+                <p class="error-par">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
         <h1 class="center-par">Welcome to Splatsville</h1>
 
         <h3 id="login_reg">Login</h3>
