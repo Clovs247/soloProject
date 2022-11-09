@@ -101,9 +101,9 @@ def view_team(team_id):
         return render_template('view_team.html', logged_in_user = logged_in_user, club = club, all_weapons=all_weapons)
 
 @app.route('/team/<int:team_id>/delete/')
-def delete_team():
+def delete_team(team_id):
     team_data={
-        'id':session['user_id']
+        'id':team_id
     }
     team.Team.delete_team(team_data)
     return redirect('/all-teams/')
