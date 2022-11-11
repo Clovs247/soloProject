@@ -478,8 +478,8 @@ td{
 .map-label p{
     font-size: 20px;
     /* background-color: #14A76C; */
-    background-color: #FFE400;
-    color: black;
+    background-color: #7b14a7c8;
+    color: #82f032;
     padding: 5px;
     /* padding: 5px; */
     display: flex;
@@ -495,7 +495,7 @@ td{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border: 5px solid #82f032;
+    border: 5px solid #FFE400;
     /* border: 5px solid #272727; */
     border-radius: 25px;
     opacity: 1;
@@ -528,7 +528,7 @@ td{
 .weapon-label{
     background-color: #272727;
     border-radius: 50px 50px 50px 50px;
-    border: 5px solid #82f032;
+    border: 5px solid #7b14a7c8;
     padding: 20px;
     margin: 10px;
     opacity: .9;
