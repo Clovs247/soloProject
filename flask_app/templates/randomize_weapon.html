@@ -9,15 +9,23 @@
 </head>
 
 
-<body>
+<body id="murch-back">
 
 
 
     <header>
+        <div class="newnav">
+            <a href="/edit/profile/" class="link" id="loginout">Edit Profile</a>
+            
+            <a href="/logout/" class="link" id="loginout">Logout</a>
+        </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         </nav>
     <div class="dash">
+        <a href="/dashboard/randomize_weapon/">
+            <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+        </a>
         <a href="/dashboard/" class="link">Home</a>
     
         <a href="/dashboard/maps/" class="link">All Maps</a>
@@ -26,7 +34,6 @@
         <a href="/all-teams/" class="link">All Teams</a>
         <a href="/create/team/" class="link">Create Team</a>
     
-        <a href="" class="link">Patch Notes</a>
         
     </div>
     </header>
@@ -43,16 +50,17 @@
         {% endfor %}
     {% endif %}
     {% endwith %}
-    
-    </main>
-    <div>
-        <div>
 
+
+    <div class="murch-container">
+        <h3>Hey there kiddo, I haven't seen you rock this weapon in a while.</h3>
+        <h3>You should check it out!</h3>
+        <div id="murch-chilling">
+            <h1 id="random-weapon">{{random_weapon.weapon_name}}</h1>
         </div>
     </div>
-    <div>
-        
-    </div>
+    </main>
+    
     <footer>
 
     </footer>

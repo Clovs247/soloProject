@@ -1,6 +1,7 @@
 import bcrypt
+import random
 from flask_app import app
-from flask_app.models import user
+from flask_app.models import user, weapon
 from flask import render_template, redirect, request, session, flash
 from flask_bcrypt import Bcrypt
 
@@ -127,6 +128,24 @@ def all_weapons():
             'id': session['user_id']
         }
         logged_in_user = user.User.get_user_by_id(data)
-        return render_template('all_weapons.html', logged_in_user=logged_in_user)
+        all_weapons = weapon.Weapon.get_all_weapons()
+        return render_template('all_weapons.html', logged_in_user=logged_in_user, all_weapons = all_weapons)
 
+
+@app.route('/dashboard/randomize_weapon/')
+def random_weapon():
+    if 'user_id' not in session:
+        return redirect('/')
+    else:
+        data = {
+            'id': session['user_id']
+        }
+        logged_in_user = user.User.get_user_by_id(data)
+        all_weapons = weapon.Weapon.get_all_weapons()
+        random_number ={
+            'id' : random.randrange(0, 55)
+        } 
+        print(type(random_number))
+        random_weapon = weapon.Weapon.get_weapon_by_id((random_number))
+        return render_template('randomize_weapon.html', logged_in_user=logged_in_user, all_weapons = all_weapons, random_weapon = random_weapon)
 

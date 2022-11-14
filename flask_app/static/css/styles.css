@@ -13,7 +13,7 @@
     background-color: slategrey;
     padding: 70px;
     border-radius: 100%;
-    background-size: contain;
+    background-size: 600px;
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
 
 }
@@ -169,7 +169,7 @@ header{
     /* align-items: center; */
     justify-content: center;
     background-image:url(/static/img/backgrounds/Logos.jpg);
-    background-size: fill;
+    /* background-size: fill; */
     padding: 20px;
     width: auto;
     position: sticky;
@@ -436,7 +436,35 @@ td{
 #submit{
     width: 40%;
 }
-
+.murch-container{
+    display: flex;
+    margin: 20px;
+    padding: 100px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    background-image: url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg);
+    /* background-size: 400px; */
+}
+.murch-container h3{
+    padding: 7px;
+    background-color: #222629;
+    border-radius: 50px;
+    color: #82f032;
+    font-size: 28px;
+}
+#murch-chilling{
+    background-image: url(/static/img/char_icons/Murch_Chilling.jpg);
+    padding: 200px;
+    background-repeat: no-repeat;
+    border-radius: 75px;
+}
+#random-weapon{
+    color: #7b14a7c8;
+    background-color: #81f03294;
+    padding: 8px;
+    border-radius: 50px;
+}
 
 /* *********************************MAPS AND WEAPONS****************************************************************** */
 
@@ -560,33 +588,34 @@ td{
     background-repeat: repeat;
     /* align-items: center; */
     justify-content: center;
-    position:relative;
+    /* position:relative; */
     /* height: 150vh; */
-    background-size:contain;
+    /* background-size:contain; */
     
 }
 #log-reg-back{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
     background-repeat: repeat;
     align-items: center; 
-    position: relative;
-    height: max;
-    background-size: cover;
+    /* position: relative; */
+    /* height: max; */
+    /* background-size: cover; */
 }
 #profile-back{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
     align-items: center; 
-    position: relative;
-    height: max;
-    background-size: cover;
+    background-repeat: repeat;
+    /* position: relative; */
+    /* height: max; */
+    /* background-size: cover; */
 }
 #splatsville-back{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
     background-repeat: repeat;
     align-items: center; 
-    position: relative;
-    height: max;
-    background-size: cover;
+    /* position: relative; */
+    /* height: max; */
+    /* background-size: cover; */
 }
 #team-back{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
@@ -594,7 +623,7 @@ td{
     align-items: center; 
     /* position: relative; */
     /* height: max; */
-    background-size: cover;
+    /* background-size: cover; */
 }
 #make-team-back{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
@@ -602,15 +631,15 @@ td{
     align-items: center; 
     /* position: relative; */
     /* height: max; */
-    background-size: cover;
+    /* background-size: cover; */
 }
 #maps-back{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
     background-repeat: repeat;
     align-items: center; 
-    position: relative;
-    height: max;
-    background-size: cover;
+    /* position: relative; */
+    /* height: max; */
+    /* background-size: cover; */
 }
 #weapons-back{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
@@ -618,7 +647,12 @@ td{
     align-items: center; 
     /* position: relative;
     height: max; */
-    background-size: cover;
+    /* background-size: cover; */
+}
+#murch-back{
+    background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
+    background-repeat: repeat;
+    align-items: center;
 }
 .weapon-img{
     height: 80px;
