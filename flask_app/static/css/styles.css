@@ -447,19 +447,27 @@ td{
     /* background-size: 400px; */
 }
 .murch-container h3{
+    display: flex;
+    align-items: center;
     padding: 7px;
     background-color: #222629;
     border-radius: 50px;
     color: #82f032;
     font-size: 28px;
 }
+.random-murch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #murch-chilling{
-    background-image: url(/static/img/char_icons/Murch_Chilling.jpg);
-    padding: 200px;
-    background-repeat: no-repeat;
+    /* background-image: url(/static/img/char_icons/Murch_Chilling.jpg); */
+    width: 75%;
     border-radius: 75px;
 }
 #random-weapon{
+    display: flex;
+    align-items: center;
     color: #7b14a7c8;
     background-color: #81f03294;
     padding: 8px;
