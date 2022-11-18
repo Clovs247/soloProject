@@ -15,14 +15,10 @@ class User:
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        # self.team = []
+
         self.weapon = None
         self.created_teams = []
         self.characters = []
-        # characters gathered from a join query
-        # select usere where
-        # join characters wehre user.id = user_id
-        # create user instance, loop through to create instances of characters to append to user.characters list
 
 
 
@@ -53,8 +49,6 @@ class User:
             members.append(cls(row))
         return members
 
-
-
     @classmethod
     def get_user_by_id(cls, data):
         query = """
@@ -65,8 +59,6 @@ class User:
         if len(results) < 1:
             return False
         return cls(results[0])
-
-
 
     @classmethod
     def get_user_by_email(cls, data):

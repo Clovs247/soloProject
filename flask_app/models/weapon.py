@@ -7,6 +7,10 @@ class Weapon:
     def __init__(self, data):
         self.id = data['id']
         self.weapon_name = data['weapon_name']
+        self.weapon_type = data['weapon_type']
+        self.image = data['image']
+        self.sub = None
+        self.special_weapon = None
 
     # ****************************CREATE*************************************
 
@@ -25,8 +29,6 @@ class Weapon:
             weapons.append(cls(row))
         return weapons
 
-    
-    # ****************************UPDATE*************************************
 
     @classmethod
     def get_weapon_by_id(cls, data):
@@ -39,10 +41,9 @@ class Weapon:
             return False
         return cls(results[0])
 
+    # ****************************UPDATE*************************************
+
     # *****************************DELETE*************************************
-
-
-
 
     # *****************************CONNECTION*************************************
 
@@ -57,6 +58,32 @@ class Weapon:
         AND loadout.user_id = %(user_id)s
         ;"""
         results = connectToMySQL(cls.db).query_db(query,data)
+        if len(results) < 1:
+            return None
+        return cls(results[0])
+
+    @classmethod
+    def get_weapon_with_sub(cls, data):
+        query = """
+        SELECT * FROM weapon
+        LEFT JOIN sub 
+        ON weapon.sub_id = sub.id
+        WHERE weapon.id = %(id)s
+        ;"""
+        results = connectToMySQL(cls.db).query_db(query, data)
+        if len(results) < 1:
+            return None
+        return cls(results[0])
+
+    @classmethod
+    def get_weapon_with_special(cls, data):
+        query = """
+        SELECT * FROM weapon
+        LEFT JOIN special_weapon
+        ON weapon.special_weapon_id = special_weapon.id
+        WHERE weapon.id = %(id)s
+        ;"""
+        results = connectToMySQL(cls.db).query_db(query, data)
         if len(results) < 1:
             return None
         return cls(results[0])
