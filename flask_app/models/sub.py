@@ -34,11 +34,11 @@ class Sub:
 
     # *****************************CONNECTION*************************************
 
-    @classmethod
-    def get_weapon_with_sub(cls, data):
-        query = """
-        SELECT * FROM sub
-        LEFT JOIN weapon ON
-        weapon.sub_id = sub.id
-        WHERE %()
-        ;"""
+    # @classmethod
+    # def get_weapon_with_sub(cls, data):
+    #     query = """
+    #     SELECT * FROM sub
+    #     LEFT JOIN weapon ON
+    #     weapon.sub_id = sub.id
+    #     WHERE %()
+    #     ;"""

@@ -29,7 +29,6 @@ class Weapon:
             weapons.append(cls(row))
         return weapons
 
-
     @classmethod
     def get_weapon_by_id(cls, data):
         query="""
