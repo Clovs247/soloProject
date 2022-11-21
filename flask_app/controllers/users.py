@@ -129,7 +129,9 @@ def all_weapons():
         }
         logged_in_user = user.User.get_user_by_id(data)
         all_weapons = weapon.Weapon.get_all_weapons()
-        return render_template('all_weapons.html', logged_in_user=logged_in_user, all_weapons = all_weapons)
+        weapon_sub = weapon.Weapon.get_all_weapons_with_sub()
+        weapon_special = weapon.Weapon.get_all_weapons_with_special()
+        return render_template('all_weapons.html', logged_in_user=logged_in_user, all_weapons = all_weapons, weapon_sub=weapon_sub, weapon_special=weapon_special)
 
 
 @app.route('/dashboard/randomize_weapon/')

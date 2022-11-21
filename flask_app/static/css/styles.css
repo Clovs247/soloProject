@@ -439,7 +439,7 @@ td{
 .murch-container{
     display: flex;
     margin: 20px;
-    padding: 100px;
+    padding: 70px;
     flex-direction: column;
     align-items: center;
     border-radius: 50px;
@@ -449,7 +449,7 @@ td{
 .murch-container h3{
     display: flex;
     align-items: center;
-    padding: 7px;
+    padding: 10px;
     background-color: #222629;
     border-radius: 50px;
     color: #82f032;
@@ -467,10 +467,11 @@ td{
 }
 #random-weapon{
     display: flex;
+    flex-direction: column;
     align-items: center;
     color: #7b14a7c8;
     background-color: #81f03294;
-    padding: 8px;
+    padding: 15px;
     border-radius: 50px;
 }
 

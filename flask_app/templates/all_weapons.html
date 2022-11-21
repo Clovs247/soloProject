@@ -54,6 +54,19 @@
             <h1 class="center-par">All Weapons</h1>
             
             <div class="all-weapons">
+                {% for weapon in all_weapons %}
+                    <label class="weapon-label">
+                        <img src="/static/img/weapons/{{weapon.image}}" alt="{{weapon.weapon_name}}" class="weapon-img">
+                        <div class="attachments">
+                            <img src="/static/img/subs/{{weapon_sub.image}}" alt="{{weapon_sub.name}}" class="weapon-sub">
+                            <img src="{{ url_for('static',filename='img/specials/{{weapon_special.image}}') }}" alt="{{weapon_special.name}}" class="weapon-spe">
+                        </div>
+                        <p>{{weapon.weapon_name}}</p>
+                    </label>
+                {% endfor %}
+                
+            </div>
+            <!-- <div class="all-weapons">
                 
                 
                 <label class="weapon-label">
@@ -561,7 +574,7 @@
                     </div>
                     <p>Ballpoint Splatling</p>
                 </label>
-        </div>
+        </div> -->
             
         </div>
     
