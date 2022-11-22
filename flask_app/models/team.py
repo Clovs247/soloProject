@@ -8,7 +8,7 @@ class Team:
     db = "Splatoon3Hub"
     def __init__(self, data):
         self.id = data['id']
-        self.name = data['name']
+        self.team_name = data['team_name']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.creator_id = data['creator_id']
@@ -22,12 +22,12 @@ class Team:
     def create_team(cls, team_data):
         query = """
         INSERT INTO team
-        (name, creator_id)
+        (team_name, creator_id)
         VALUES
-        (%(name)s, %(user_id)s)
+        (%(team_name)s, %(user_id)s)
         ;"""
         team_id =  connectToMySQL(cls.db).query_db(query, team_data)
-        print("&&&&&&&&&&&&&&&&&&", team_id)
+        # print("&&&&&&&&&&&&&&&&&&", team_id)
         team_data["team_id"] = team_id
         cls.join_team(team_data)
         return team_id
@@ -172,20 +172,24 @@ class Team:
 
 # ***********************************VALIDATE***************************************
     @staticmethod
-    def validate_team(team_id):
+    def validate_team(team_data):
         is_valid = True
         query="""
         SELECT * FROM team
-        WHERE name = %(name)s
+        WHERE team_name = %(team_name)s
         ;"""
-        results = connectToMySQL(Team.db).query_db(query, team_id)
-        if len(results)>1:
+        results = connectToMySQL(Team.db).query_db(query, team_data)
+        print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^", results)
+        if len(results)<=1:
             is_valid = False
-            flash("This Team name already exists, please choose another.")
-        if len(team_id['name'])<=1:
+            flash("Please don't copy the name of another team.")
+        if results == team_data['team_name']:
+            is_valid = False
+            flash("The team name that you've chosen already exists, please choose another.")
+        if len(team_data['team_name'])<=1:
             is_valid=False
             flash("The name of this team needs to be at least 2 characters.")
-        
+            
         return is_valid
 
     @staticmethod

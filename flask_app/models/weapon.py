@@ -62,49 +62,30 @@ class Weapon:
     @classmethod
     def get_weapon_with_sub_and_special(cls, data):
         query = """
-        SELECT * FROM weapon
-        LEFT JOIN weapon_loadout
+        SELECT * FROM weapon_loadout
+        LEFT JOIN weapon
         ON weapon_loadout.weapon_id = weapon.id
         LEFT JOIN sub
         ON weapon_loadout.sub_id = sub.id
         LEFT JOIN special_weapon
         ON weapon_loadout.special_weapon_id = special_weapon.id 
-        WHERE weapon_loadout.weapon_id = %(id)s
+        WHERE weapon.id = %(id)s
         ;"""
         results = connectToMySQL(cls.db).query_db(query, data)
         if len(results) < 1:
             return None
         return cls(results[0])
     
-    # @classmethod
-    # def get_all_weapons_with_sub(cls):
-    #     query = """
-    #     SELECT * FROM weapon
-    #     LEFT JOIN sub 
-    #     ON weapon.sub_id = sub.id
-    #     ;"""
-    #     results = connectToMySQL(cls.db).query_db(query)
-    #     return results
-
-    # @classmethod
-    # def get_weapon_with_special(cls, data):
-    #     query = """
-    #     SELECT * FROM weapon
-    #     LEFT JOIN special_weapon
-    #     ON weapon.special_weapon_id = special_weapon.id
-    #     WHERE weapon.id = %(id)s
-    #     ;"""
-    #     results = connectToMySQL(cls.db).query_db(query, data)
-    #     if len(results) < 1:
-    #         return None
-    #     return cls(results[0])
-    
-    # @classmethod
-    # def get_all_weapons_with_special(cls):
-    #     query = """
-    #     SELECT * FROM weapon
-    #     LEFT JOIN special_weapon
-    #     ON weapon.special_weapon_id = special_weapon.id
-    #     ;"""
-    #     results = connectToMySQL(cls.db).query_db(query)
-    #     return results
+    @classmethod
+    def get_all_weapons_with_kit(cls):
+        query="""
+        SELECT * FROM weapon
+        LEFT JOIN weapon_loadout
+        ON weapon_loadout.weapon_id = weapon.id
+        LEFT JOIN sub
+        ON weapon_loadout.sub_id = sub.id
+        LEFT JOIN special_weapon
+        ON weapon_loadout.special_weapon_id = special_weapon.id
+        ;"""
+        results = connectToMySQL(cls.db).query_db(query)
+        return results

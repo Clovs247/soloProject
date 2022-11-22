@@ -30,21 +30,24 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-        <h2 class="center-par">Edit Profile</h2>
-        <div class="new_team_form_div">
-            <form action="/update/profile/" method="post" class="new_team_form">
-                <div class="edit-profile">
-                    <label>
-                        Username:
-                        <input type="text" name="username" value="{{logged_in_user.username}}">
-                    </label>
-                    <label>
-                        Email:
-                        <input type="email" name="email" value="{{logged_in_user.email}}">
-                    </label>
-                    <input type="submit" value="Submit">
-                </div>
-            </form>
+        <div class="center-par">
+
+            <h2>Edit Profile</h2>
+            <div class="new_team_form_div">
+                <form action="/update/profile/" method="post" class="new_team_form edit-profile">
+                    
+                        <label>
+                            Username:
+                            <input type="text" name="username" value="{{logged_in_user.username}}">
+                        </label>
+                        <label>
+                            Email:
+                            <input type="email" name="email" value="{{logged_in_user.email}}">
+                        </label>
+                        <input type="submit" value="Submit">
+                    
+                </form>
+            </div>
         </div>
 
     </main>

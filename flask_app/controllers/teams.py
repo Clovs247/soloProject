@@ -40,7 +40,7 @@ def create_team_page():
 @app.route('/create/team/form/', methods=['post'])
 def form_team():
     team_data = {
-            'name' : request.form['name'],
+            'team_name' : request.form['team_name'],
             'user_id' : session['user_id'], 
             'weapon_id' : request.form['weapon_id']
         }
