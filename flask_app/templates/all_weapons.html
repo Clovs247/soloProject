@@ -56,10 +56,12 @@
             <div class="all-weapons">
                 {% for weapon in all_weapons %}
                     <label class="weapon-label">
-                        <img src="/static/img/weapons/{{weapon.weapon_image}}" alt="{{weapon.weapon_name}}" class="weapon-img">
-                        <div class="attachments">
-                            <img src="/static/img/subs/{{weapon.sub_image}}" alt="{{weapon.sub_name}}" class="weapon-sub">
-                            <img src="/static/img/specials/{{weapon.special_image}}" alt="{{weapon.special_name}}" class="weapon-spe">
+                        <div class="weapon-loadout">
+                            <img src="/static/img/weapons/{{weapon.weapon_image}}" alt="{{weapon.weapon_name}}" class="weapon-img">
+                            <div class="attachments">
+                                <img src="/static/img/subs/{{weapon.sub_image}}" alt="{{weapon.sub_name}}" class="weapon-sub">
+                                <img src="/static/img/specials/{{weapon.special_image}}" alt="{{weapon.special_name}}" class="weapon-spe">
+                            </div>
                         </div>
                         <p>{{weapon.weapon_name}}</p>
                     </label>
