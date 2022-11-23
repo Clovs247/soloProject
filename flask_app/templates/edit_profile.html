@@ -19,6 +19,23 @@
         <nav>
             {% block menu %} {% include 'edit_menu.html' %} {% endblock menu %}
         </nav>
+        <div class="dash">
+        
+            <a href="/dashboard/randomize_weapon/">
+                <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+            </a>
+        
+            <a href="/dashboard/" class="link">Home</a>
+        
+            <a href="/dashboard/maps/" class="link">All Maps</a>
+        
+            <a href="/dashboard/weapons/" class="link">All Weapons</a>
+
+            <a href="/all-teams/" class="link">All Teams</a>
+        
+            <a href="/create/team/" class="link">Create a Team</a>
+        
+        </div>
     </header>
     <main>
 
