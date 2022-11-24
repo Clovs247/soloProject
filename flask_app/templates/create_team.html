@@ -61,7 +61,7 @@
                     Weapon Choice:
                     <select name="weapon_id" class="weapon-selection">
                         {% for weapon in all_weapons %}
-                            <option value="{{weapon.id}}">{{weapon.weapon_name}}</option>
+                            <option value="{{weapon.id}}" class="weapon-select">{{weapon.weapon_name}}</option>
                         {% endfor %}
                     </select>
                 </label>

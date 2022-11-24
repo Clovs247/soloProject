@@ -84,12 +84,20 @@ input[type=password] {
     background-color: #7b14a7c8;
     font-weight: 1000;
     color: #82f032;
+    transform: scale(1.15);
 }
 .weapon-selection{
     width: 80%;
     padding: 10px;
     margin: 8px 0;
     border-radius: 25px;
+}
+.weapon-selection select{
+    display: none;
+}
+.weapon-select{
+    padding: 10px;
+    margin: 10px;
 }
 
 /* *********************************NEW USER LOGIN FORM********************************************************************************* */
@@ -158,6 +166,11 @@ input[type=password] {
     padding: 30px;
     border-radius: 15px;
 }
+.edit-profile label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* *********************************MENUS********************************************************************************* */
 
@@ -198,6 +211,7 @@ nav{
     color: black;
     /* background-color: whitesmoke; */
     font-size: 25px;
+    transform: scale(1.15);
     /* position: relative; */
 }
 .dash{
@@ -222,20 +236,24 @@ nav{
     font-style: oblique;
 }
 #loginout:hover{
-    background-color:#db6d3e74 ;
+    background-color:#f90cba90 ;
+    transform: scale(1.15);
 }
 .view-delete{
     text-decoration-line: none;
-    padding: 7px;
+    padding: 15px;
     border: 1px solid black;
     background-color: #F5B842;
     border-radius: 75px;
+    font-weight: 700;
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
-
+}
+.view-delete:hover{
+    transform: scale(1.15);
 }
 .view{
     text-decoration-line: none;
-    padding: 7px;
+    padding: 15px;
     border: 1px solid black;
     background-color: #F5B842;
     border-radius: 75px;
@@ -253,6 +271,7 @@ nav{
     background-color: #7b14a7c8;
     border-radius: 75px;
     padding: 5px;
+    transform: scale(1.15);
 }
 
 /* *********************************MAIN ELEMENTS****************************************************************** */
@@ -289,7 +308,8 @@ main{
     width: fit-content;
     background-color: rgba(0,0,0,0.50);
     font-size: 35px;
-    padding: 10px;
+    padding: 15px;
+    margin: 10px;
     border-radius: 50px;
     color: #FFE400;
 }
@@ -320,6 +340,7 @@ main{
     background-color: #7b14a7c8;
     color: #82f032;
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.305), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.15);
 }
 table{
     display: flex;
@@ -340,11 +361,13 @@ tbody{
     width: 1000px;
     border-radius: 50px;
     /* background-color: white; */
-    /* justify-content: space-between; */
+    justify-content: center;
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
 
 }
 th{
+    display: flex;
+    justify-content: center;
     background-color: rgba(0,0,0,0.50);
     border-radius: 50px;
     color: #FFE400;
@@ -373,9 +396,9 @@ td{
 }
 .teams-made p{
     font-size: 18px;
-    background-color: #272727;
-    padding: 7px;
-    color: #9d0bd2;
+    background-color: #272727c7;
+    padding: 15px;
+    color: #FFE400;
     border-radius: 40px;
 }
 .all-teams{
@@ -389,9 +412,9 @@ td{
 }
 .all-teams p{
     font-size: 18px;
-    background-color: #272727;
-    color: #9d0bd2;
-    padding: 7px;
+    background-color: #272727c7;
+    color: #FFE400;
+    padding: 15px;
     border-radius: 40px;
 }
 .team-members{
@@ -513,7 +536,9 @@ td{
     opacity: .9;
     /* background-image:url(/static/img/backgrounds/Repeating_Background.jpg); */
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
-
+}
+.map-label:hover{
+    transform: scale(1.15);
 }
 .map-label p{
     font-size: 20px;
@@ -578,6 +603,9 @@ td{
     flex-direction: column;
     align-items: center;
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+}
+.weapon-label:hover{
+    transform: scale(1.15);
 }
 .weapon-label p{
     font-size: 20px;
