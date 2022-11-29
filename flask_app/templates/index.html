@@ -18,6 +18,20 @@
         <nav>
             {% block menu %} {% include 'menu.html' %} {% endblock menu %}
         </nav>
+        <div class="dash">
+            
+            <a href="/new/dashboard/randomize_weapon/">
+                <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+            </a>
+        
+            <a href="/new/dashboard/maps/" class="link">All Maps</a>
+        
+            <a href="/new/dashboard/weapons/" class="link">All Weapons</a>
+        
+            <a href="/new/all-teams/" class="link">All Teams</a>
+            
+            
+        </div>
     </header>
     <main>
 

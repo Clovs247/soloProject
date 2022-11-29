@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Splatoon 3 Maps</title>
+</head>
+<body id="maps-back">
+
+    
+
+    <header>
+        <div class="newnav">
+    
+            <a href="/edit/profile/" class="link" id="loginout">Edit Profile</a>
+            
+            <a href="/logout/" class="link" id="loginout">Logout</a>
+        </div>
+        <nav>
+            {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
+        </nav>
+        <div class="dash">
+            
+            <a href="/new/dashboard/randomize_weapon/">
+                <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+            </a>
+        
+            <a href="/new/dashboard/maps/" class="link">All Maps</a>
+        
+            <a href="/new/dashboard/weapons/" class="link">All Weapons</a>
+        
+            <a href="/new/all-teams/" class="link">All Teams</a>
+            
+        </div>
+    </header>
+
+
+    <main>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <strong class="error-par">WAAAIIITTTTT</strong>
+                {% for message in messages %}
+                    <p class="error-par">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="map-container">
+
+            <h1 class="all-map-label">All Maps</h1>
+            <div class="maps">
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Scorch_Gorge.jpg') }}" alt="Scorch Gorge" class="map-imgs">
+                    <p>Scorch Gorge</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Eeltail_Alley.jpg') }}" alt="EelTail Alley" class="map-imgs">
+                    <p>EelTail Alley</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Museum_dAlfonsino.jpg') }}" alt="Museum D'Alfonsino" class="map-imgs">
+                    <p>Museum D'Alfonsino</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Undertow_Spillway.jpg') }}" alt="Undertow Spillway" class="map-imgs">
+                    <p>Undertow Spillway</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Mincemeat_Metalworks.jpg') }}" alt="Mincemeat Metalworks" class="map-imgs">
+                    <p>Mincemeat Metalworks</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Hammerhead_Bridge.jpg') }}" alt="Hammerhead Bridge" class="map-imgs">
+                    <p>Hammerhead Bridge</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Mahi-Mahi_Resort.jpg') }}" alt="Mahi-Mahi Resort" class="map-imgs">
+                    <p>Mahi-Mahi Resort</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Inkblot_Art_Academy.jpg') }}" alt="Inkblot Art Academy" class="map-imgs">
+                    <p>Inkblot Art Academy</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Sturgeon_Shipyard.png') }}" alt="Sturgeon Shipyard" class="map-imgs">
+                    <p>Sturgeon Shipyard</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Mako_Mart.jpg') }}" alt="MakoMart" class="map-imgs">
+                    <p>MakoMart</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Wahoo_World.jpg') }}" alt="Wahoo World" class="map-imgs">
+                    <p>Wahoo World</p>
+                </label>
+                <label class="map-label">
+                    <img src="{{ url_for('static',filename='img/maps/Hagglefish_Market.jpg') }}" alt="Hagglefish Market" class="map-imgs">
+                    <p>Hagglefish Market</p>
+                </label>
+            </div>
+        
+        </div>
+    
+    </main>
+
+
+        
+        
+
+    
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>

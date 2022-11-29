@@ -149,3 +149,26 @@ def random_weapon():
         random_weapon = weapon.Weapon.get_weapon_by_id((random_number))
         return render_template('randomize_weapon.html', logged_in_user=logged_in_user, all_weapons = all_weapons, random_weapon = random_weapon)
 
+# &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& UN-REGISTERED USERS &&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+@app.route('/new/dashboard/')
+def new_dash():
+    return render_template('unknown_dashboard.html')
+
+@app.route('/new/dashboard/maps/')
+def new_maps():
+    return render_template('unknown_maps.html')
+
+@app.route('/new/dashboard/weapons/')
+def new_weapon():
+    all_weapons = weapon.Weapon.get_all_weapons_with_kit()
+    return render_template('unknown_weapons.html', all_weapons = all_weapons)
+
+@app.route('/new/dashboard/randomize_weapon/')
+def new_randomize():
+    all_weapons = weapon.Weapon.get_all_weapons()
+    random_number ={
+        'id' : random.randrange(0, 55)
+    } 
+    random_weapon = weapon.Weapon.get_weapon_by_id((random_number))
+    return render_template('unknown_randomize_weapon.html',  all_weapons = all_weapons, random_weapon = random_weapon)

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Splatoon 3 Weapons</title>
+</head>
+<body id="weapons-back">
+
+    
+
+    <header>
+        <div class="newnav">
+            <a href="/register/form" class="link" id="loginout">Register</a>
+            
+            <a href="/login/form" class="link" id="loginout">Login</a>
+        </div>
+        <nav>
+            {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
+        </nav>
+        <div class="dash">
+            
+            <a href="/new/dashboard/randomize_weapon/">
+                <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+            </a>
+        
+            <a href="/new/dashboard/maps/" class="link">All Maps</a>
+        
+            <a href="/new/dashboard/weapons/" class="link">All Weapons</a>
+        
+            <a href="/new/all-teams/" class="link">All Teams</a>
+            
+        </div>
+    </header>
+
+
+    <main>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <strong>WAAAIIITTTTT</strong>
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+        <div class="weapon-container">
+
+            <h1 class="center-par">All Weapons</h1>
+            
+            <div class="all-weapons">
+                {% for weapon in all_weapons %}
+                    <label class="weapon-label">
+                        <div class="weapon-loadout">
+                            <img src="/static/img/weapons/{{weapon.weapon_image}}" alt="{{weapon.weapon_name}}" class="weapon-img">
+                            <div class="attachments">
+                                <img src="/static/img/subs/{{weapon.sub_image}}" alt="{{weapon.sub_name}}" class="weapon-sub">
+                                <img src="/static/img/specials/{{weapon.special_image}}" alt="{{weapon.special_name}}" class="weapon-spe">
+                            </div>
+                        </div>
+                        <p>{{weapon.weapon_name}}</p>
+                    </label>
+                {% endfor %}
+                
+            </div>
+            
+        </div>
+    
+    
+    </main>
+
+
+        
+        
+
+    
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>
+
