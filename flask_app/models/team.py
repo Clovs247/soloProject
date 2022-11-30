@@ -5,7 +5,7 @@ from flask_app.models import weapon
 
 
 class Team:
-    db = "Splatoon3Hub"
+    db = "splatoon3hub"
     def __init__(self, data):
         self.id = data['id']
         self.team_name = data['team_name']

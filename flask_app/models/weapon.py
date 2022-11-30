@@ -3,7 +3,7 @@ from flask_app.models import user
 from flask_app.models import team
 
 class Weapon:
-    db = "Splatoon3Hub"
+    db = "splatoon3hub"
     def __init__(self, data):
         self.id = data['id']
         self.weapon_name = data['weapon_name']
