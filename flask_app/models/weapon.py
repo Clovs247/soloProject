@@ -9,7 +9,10 @@ class Weapon:
         self.weapon_name = data['weapon_name']
         self.weapon_type = data['weapon_type']
         self.weapon_image = data['weapon_image']
-
+        self.sub_name = data['sub_name'] if 'sub_name' in data else None
+        self.sub_image = data['sub_image'] if 'sub_image' in data else None
+        self.special_name = data['special_name'] if 'special_name' in data else None
+        self.special_image = data['special_image'] if 'special_image' in data else None
     # ****************************CREATE*************************************
 
 

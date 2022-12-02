@@ -47,8 +47,11 @@
         
         <div class="solo-weapon-container">
             <p>{{ arm.weapon_name }}</p>
-            <p>{{ arm.special_name }}</p>
+            <img src="/static/img/weapons/{{arm.weapon_image}}" alt="{{arm.weapon_name}}" class="weapon-img">
             <p>{{ arm.sub_name }}</p>
+            <img src="/static/img/subs/{{arm.sub_image}}" alt="{{arm.sub_name}}" class="weapon-sub">
+            <p>{{ arm.special_name }}</p>
+            <img src="/static/img/specials/{{arm.special_image}}" alt="{{arm.special_name}}" class="weapon-spe">
         </div>
     
     </main>
