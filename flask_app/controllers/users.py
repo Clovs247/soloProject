@@ -131,6 +131,14 @@ def all_weapons():
         all_weapons = weapon.Weapon.get_all_weapons_with_kit()
         return render_template('all_weapons.html', logged_in_user=logged_in_user, all_weapons = all_weapons)
 
+@app.route('/view-weapon/<int:weapon_id>')
+def view_weapon(weapon_id):
+    weapon_selection = {
+        'id' : weapon_id
+    }
+    arm = weapon.Weapon.get_weapon_with_sub_and_special(weapon_selection)
+    print(arm)
+    return render_template('view_weapon.html', arm = arm)
 
 @app.route('/dashboard/randomize_weapon/')
 def random_weapon():

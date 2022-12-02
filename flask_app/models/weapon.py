@@ -34,9 +34,7 @@ class Weapon:
         WHERE id = %(id)s
         ;"""
         results = connectToMySQL(cls.db).query_db(query, data)
-        if len(results) < 1:
-            return False
-        return cls(results[0])
+        return results
 
     # ****************************UPDATE*************************************
 

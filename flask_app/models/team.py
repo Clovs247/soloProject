@@ -180,13 +180,13 @@ class Team:
         ;"""
         results = connectToMySQL(Team.db).query_db(query, team_data)
         print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^", results)
-        if len(results)<=1:
+        if len(results) >= 1:
             is_valid = False
             flash("Please don't copy the name of another team.")
         if results == team_data['team_name']:
             is_valid = False
             flash("The team name that you've chosen already exists, please choose another.")
-        if len(team_data['team_name'])<=1:
+        if len(team_data['team_name']) <= 1:
             is_valid=False
             flash("The name of this team needs to be at least 2 characters.")
             
@@ -200,7 +200,7 @@ class Team:
         AND team_id = %(team_id)s
         ;"""
         results = connectToMySQL(Team.db).query_db(query, canidate)
-        if len(results)>0:
+        if len(results) > 0:
             flash("You can't join the same team twice")
             return False
         
