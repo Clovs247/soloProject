@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>View Team</title>
+</head>
+
+
+<body id="team-back">
+
+    
+
+    <header>
+        <div class="newnav">
+            <a href="/register/form" class="link" id="loginout">Register</a>
+            
+            <a href="/login/form" class="link" id="loginout">Login</a>
+        </div>
+        <nav>
+            {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
+        </nav>
+        <div class="dash">
+            
+            <a href="/new/dashboard/randomize_weapon/">
+                <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+            </a>
+        
+            <a href="/new/dashboard/maps/" class="link">All Maps</a>
+        
+            <a href="/new/dashboard/weapons/" class="link">All Weapons</a>
+        
+            <a href="/new/all-teams/" class="link">All Teams</a>
+            
+        </div>
+    </header>
+
+
+    <main>
+
+        <div class="team-list">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <strong class="error-par">Wait a moment...</strong>
+                    {% for message in messages %}
+                        <p class="error-par">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <h1 class="center-par">{{club.name}}</h1>
+            <p hidden>{{club.creator_id}}</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>
+                            <p>
+                                Member Names
+                            </p>
+                        </th>
+                        <th>
+                            <p>
+                                Weapon Choice
+                            </p>
+                        </th>
+                        
+                    </tr>
+                    {% for member in club.on_team%}
+                        <tr class="team-list-table">
+                            <td>
+                                <p>{{member.username}}</p>
+                            </td>
+                            <td>
+                                <p>{{member.weapon.weapon_name}}</p>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    
+    
+    </main>
+    
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>

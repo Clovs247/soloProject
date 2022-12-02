@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>All Registered Teams</title>
+</head>
+<body id="team-back" >
+
+
+
+    <header>
+        <div class="newnav">
+            <a href="/register/form" class="link" id="loginout">Register</a>
+            
+            <a href="/login/form" class="link" id="loginout">Login</a>
+        </div>
+        <nav>
+            {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
+        </nav>
+        <div class="dash">
+            
+            <a href="/new/dashboard/randomize_weapon/">
+                <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+            </a>
+        
+            <a href="/new/dashboard/maps/" class="link">All Maps</a>
+        
+            <a href="/new/dashboard/weapons/" class="link">All Weapons</a>
+        
+            <a href="/new/all-teams/" class="link">All Teams</a>
+            
+        </div>
+    </header>
+
+
+    <main>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <strong class="error-par">WAAAIIITTTTT</strong>
+            {% for message in messages %}
+                <p class="error-par">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+        <h1 class="center-par">All Teams</h1>
+        <table>
+            <tr>
+                <th>
+                    Team Names
+                </th>
+                <th>
+                    List Of Teammates
+                </th>
+            </tr>
+            {% for team in all_teams%}
+                <tr class="all-teams">
+                    <td>
+                        <a href="/new/team/{{team.id}}/view/" class="view">{{ team.team_name }}</a>
+                    </td>
+                    <td class="team-members">
+                        {% for member in team.on_team %}
+                            <p>{{member.username}}</p>
+                        {% endfor %}
+                    </td>
+                </tr>
+                
+            {% endfor %}
+        </table>
+    
+    </main>
+
+
+
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>
+

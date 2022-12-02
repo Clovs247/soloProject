@@ -16,14 +16,21 @@ def display_teams():
         all_teams = team.Team.get_all_teams()
         print("***************ALL TEAMS*********************",all_teams)
         for results in all_teams:
-            print(results.id)
-            team_data={
-                'id' : [results.id]
-            }
+            print(results.team_name)
+            
             # print("*******************************",results)
         # club = team.Team.get_team_with_users(team_data)
         # club = team.Team.get_teams_made_by_user(data)
         return render_template('all_teams.html', logged_in_user = logged_in_user, all_teams=all_teams)
+
+@app.route('/new/all-teams/')
+def display_new_teams():
+        all_teams = team.Team.get_all_teams()
+        print("***************ALL TEAMS*********************")
+        for results in all_teams:
+            print(results.team_name)
+        return render_template('unknown_all_teams.html', all_teams=all_teams)
+
 
 @app.route('/create/team/')
 def create_team_page():
@@ -77,7 +84,7 @@ def join_team(team_id):
         return redirect('/all-teams/')
 
 @app.route('/team/<int:team_id>/view/')
-def view_team(team_id):
+def new_view_team(team_id):
     if 'user_id' not in session:
         return redirect('/')
     else:
@@ -99,6 +106,17 @@ def view_team(team_id):
         club = team.Team.get_team_with_users(team_data)
         print("*****************", club.on_team)
         return render_template('view_team.html', logged_in_user = logged_in_user, club = club, all_weapons=all_weapons)
+
+@app.route('/new/team/<int:team_id>/view/')
+def view_team(team_id):
+
+    team_data = {
+        'id' : team_id
+    }
+    club = team.Team.get_team_with_users(team_data)
+    print("*****************", club.on_team)
+    return render_template('unknown_view_team.html', club = club)
+
 
 @app.route('/team/<int:team_id>/delete/')
 def delete_team(team_id):
