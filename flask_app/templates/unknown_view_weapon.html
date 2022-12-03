@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Splatsville Dashboard</title>
+    <title>View Team</title>
 </head>
 
 
-<body id="murch-back">
+<body>
 
-
+    
 
     <header>
         <div class="newnav">
@@ -38,33 +38,17 @@
     </header>
 
 
-
-
     <main>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <strong class="error-par">WAAAIIITTTTT</strong>
-        {% for message in messages %}
-            <p class="error-par">{{message}}</p>
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-
-
-    <div class="murch-container">
-        <h3>Oi! You're not connected to the server.</h3>
-        <h3>But if you're looking for a weapon to use, Here.</h3>
-        <div class="random-murch">
-            
-            <h1 id="random-weapon">
-                {{random_weapon.weapon_name}}
-
-                <img src="/static/img/weapons/{{random_weapon.weapon_image}}">
-            </h1>
-            <img src="/static/img/char_icons/Murch_Chilling.jpg" alt="Murch_Chilling" id="murch-chilling">
-                
+        
+        <div class="solo-weapon-container">
+            <p>{{ arm.weapon_name }}</p>
+            <img src="/static/img/weapons/{{arm.weapon_image}}" alt="{{arm.weapon_name}}" class="weapon-img">
+            <p>{{ arm.sub_name }}</p>
+            <img src="/static/img/subs/{{arm.sub_image}}" alt="{{arm.sub_name}}" class="weapon-sub">
+            <p>{{ arm.special_name }}</p>
+            <img src="/static/img/specials/{{arm.special_image}}" alt="{{arm.special_name}}" class="weapon-spe">
         </div>
-    </div>
+    
     </main>
     
     <footer>

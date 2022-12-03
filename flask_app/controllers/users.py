@@ -149,13 +149,12 @@ def random_weapon():
             'id': session['user_id']
         }
         logged_in_user = user.User.get_user_by_id(data)
-        all_weapons = weapon.Weapon.get_all_weapons()
         random_number ={
             'id' : random.randrange(0, 55)
         } 
         print(type(random_number))
-        random_weapon = weapon.Weapon.get_weapon_by_id((random_number))
-        return render_template('randomize_weapon.html', logged_in_user=logged_in_user, all_weapons = all_weapons, random_weapon = random_weapon)
+        random_weapon = weapon.Weapon.get_weapon_with_sub_and_special((random_number))
+        return render_template('randomize_weapon.html', logged_in_user=logged_in_user, random_weapon = random_weapon)
 
 # &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& UN-REGISTERED USERS &&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
@@ -174,9 +173,17 @@ def new_weapon():
 
 @app.route('/new/dashboard/randomize_weapon/')
 def new_randomize():
-    all_weapons = weapon.Weapon.get_all_weapons()
     random_number ={
         'id' : random.randrange(0, 55)
     } 
-    random_weapon = weapon.Weapon.get_weapon_by_id((random_number))
-    return render_template('unknown_randomize_weapon.html',  all_weapons = all_weapons, random_weapon = random_weapon)
+    random_weapon = weapon.Weapon.get_weapon_with_sub_and_special((random_number))
+    return render_template('unknown_randomize_weapon.html', random_weapon = random_weapon)
+
+@app.route('/new/view-weapon/<int:weapon_id>')
+def new_view_weapon(weapon_id):
+    weapon_selection = {
+        'id' : weapon_id
+    }
+    arm = weapon.Weapon.get_weapon_with_sub_and_special(weapon_selection)
+    print(arm)
+    return render_template('unknown_view_weapon.html', arm = arm)
