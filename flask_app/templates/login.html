@@ -13,26 +13,30 @@
 
     <header>
         <div class="newnav">
-            <a href="/" class="link"  id="loginout">Home</a>
+            <a href="/" class="loginout">
+                <span>Home</span>
+                <div class="wave-login"></div>
+            </a>
         </div>
         <nav>
             {% block menu %} {% include 'login_reg_menu.html' %} {% endblock menu %}
         </nav>
     </header>
     <main>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong class="error-par">WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p class="error-par">{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    
         <h1 class="center-par">Welcome to Splat-Hub</h1>
 
         <h3 id="login_reg">Login</h3>
         <div  id="login_reg_form_div">
             <form action="/login/" method="post" id="login_reg_form">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <strong class="error-par">Hold Up, Chum</strong>
+                        {% for message in messages %}
+                            <p id="error-info">{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
                     <label>
                         Email:
                         <input type="email" name="email">

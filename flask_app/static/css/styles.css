@@ -2,8 +2,9 @@
 
 /* *********************************CLOCK********************************************************************************* */
 
+
 .clock{
-    width:fit-content;
+    width:auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,11 +12,11 @@
     font-family: sans-serif;
     background-image:url(/static/img/backgrounds/Graffiti.jpg);
     background-color: slategrey;
-    padding: 70px;
+    padding: 50px;
+    margin: 20px;
     border-radius: 100%;
-    background-size: 600px;
+    background-size: 400px;
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
-
 }
 .time{
     font-size: 4vw;
@@ -28,18 +29,20 @@
 .date-time{
     display: flex;
     justify-items: center;
-    font-size: 18px;
+    font-size: 2vw;
     /* color: #FFE400; */
     color: #82f032;
     font-style: italic;
 }
 @media screen and (max-width: 768px){
     .time{
-        font-size: 5vw;
+        font-size: 4vw;
     }
 }
 
+
 /* *********************************FORMS********************************************************************************* */
+
 
 input[type=text] {
     width: 100%;
@@ -67,7 +70,6 @@ input[type=password] {
     box-sizing: border-box;
     border: 2px solid black;
 }
-
 #submit{
     padding: 16px 32px;
     padding: 10px;
@@ -101,6 +103,17 @@ input[type=password] {
     padding: 10px;
     margin: 10px;
 }
+.join-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.join-form label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120%;
+}
 
 /* *********************************NEW USER LOGIN FORM********************************************************************************* */
 
@@ -109,7 +122,7 @@ input[type=password] {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 4vw;
     background-color: rgba(0, 0, 0, 0.587);
     padding: 10px;
     border-radius: 50px;
@@ -121,7 +134,6 @@ input[type=password] {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 20px;
     background-color: rgba(0, 0, 0, 0.579);
     padding: 10px;
     border-radius: 50px;
@@ -133,7 +145,7 @@ input[type=password] {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 20px;
+    font-size: 3vw;
 }
 #new_team_form_div{
     display: flex;
@@ -174,7 +186,9 @@ input[type=password] {
     align-items: center;
 }
 
+
 /* *********************************MENUS********************************************************************************* */
+
 
 header{
     display: flex;
@@ -184,8 +198,8 @@ header{
     background-image:url(/static/img/backgrounds/Logos.jpg);
     /* background-size: fill; */
     padding: 20px;
-    width: auto;
-    position: sticky;
+    /* width: auto; */
+    /* position: sticky; */
     padding-bottom: 5px;
     border-radius: 50px;
 }
@@ -195,51 +209,57 @@ nav{
     align-items: center;
     justify-content: center;
     width: auto;
-    margin: 50px;
+    margin: 30px;
 }
 .newnav{
     display: flex;
     justify-content:space-between;
-    /* background-image:url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg); */
-    /* background-color:darkslateblue; */
-    color: whitesmoke;
-    font-size: 25px;
     position: static;
-    font-weight: 1000;
 }
 .newnav a:hover{
     display: flex;
-    justify-content: space-evenly;
-    color: black;
-    /* background-color: whitesmoke; */
-    font-size: 25px;
+    justify-content: space-between;
     transform: scale(1.15);
-    /* position: relative; */
 }
 .dash{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 50px;
     align-items: center;
-    position: sticky;
-    font-weight: 900;
-    font-style: oblique;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding: 5px;
+    padding: 10px;
     background-color:rgb(68, 96, 54);
     background-image:url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg);
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
 }
-#loginout{
-    background-color: white;
+.loginout{
+    background-color: rgba(18, 17, 17, 0.3);
     font-style: oblique;
+    text-decoration-line: none;
+    padding: 2vw 3vw;
+    border: 1px solid black;
+    border-radius: 25px;
+    font-size: 25px;
+    color: #222629;
+    font-weight: 900; 
+    font-style: oblique;
+    position: relative;
+    overflow: hidden;
 }
-#loginout:hover{
+.loginout:hover{
     background-color:#f90cba90 ;
+    color: #ffffff;
     transform: scale(1.15);
+}
+span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 4px;
+    color: #c5c6c8;
+    font-size: 3vw;
 }
 .view-delete{
     text-decoration-line: none;
@@ -265,53 +285,165 @@ nav{
     transform: scale(1.10);
 }
 #murch{
-    height: 70px;
-    background-color: #82f032;
     border-radius: 75px;
-    padding: 5px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    height: 5vw;
 }
 #murch:hover{
-    height: 70px;
-    background-color: #7b14a7c8;
     border-radius: 75px;
-    padding: 5px;
     transform: scale(1.15);
 }
+.link{
+    display: flex;
+    align-items: center;
+    text-decoration-line: none;
+    padding: 1vw 2vw;
+    border: 1px solid black;
+    background-color: #81f032c8;
+    /* width: 100%; */
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+    border-radius: 25px;
+    color: #222629;
+    font-weight: 900; 
+    font-style: oblique;
+    overflow: hidden;
+    position: relative;
+    margin: 5px;
+    height: 5vw;
+}
+.link:hover{
+    background-color: #7b14a7c8;
+    color: #82f032;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.305), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.15);
+}
+.wave-login{
+    width: 200px;
+    height: 150px;
+    background-color: #ea7120;
+    box-shadow: inset 0 0 50px rgba(76, 219, 40, 0.765);
+    position: absolute;
+    left: 0;
+    top: -60px;
+    transition: 0.4s;
+}
+.wave-login:before{
+    width: 200%;
+    height: 200%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    border-radius: 50%;
+    background-color: #c308f7c4;
+    animation: wave 5s linear infinite;
+}
+.wave-login:after{
+    width: 200%;
+    height: 200%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    border-radius: 40%;
+    background-color: rgba(20,20,20,0.5);
+    animation: wave 10s linear infinite;
+}
+.wave-link{
+    width: 200px;
+    height: 250px;
+    background-color: #ea7120;
+    box-shadow: inset 0 0 50px rgba(76, 219, 40, 0.765);
+    position: absolute;
+    left: 0;
+    top: -60px;
+    transition: 0.4s;
+}
+.wave-link:before{
+    width: 200%;
+    height: 200%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    border-radius: 50%;
+    background-color: #c308f7c4;
+    animation: wave 5s linear infinite;
+}
+.wave-link:after{
+    width: 200%;
+    height: 200%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    border-radius: 40%;
+    background-color: rgba(20,20,20,0.5);
+    animation: wave 10s linear infinite;
+}
+@keyframes wave {
+    0% {
+    transform: translate(-50%,-75%) rotate(0deg);
+    }
+
+    100% {
+    transform: translate(-50%,-75%) rotate(360deg);
+    }
+}
+
 
 /* *********************************MAIN ELEMENTS****************************************************************** */
+
 
 body{
     width: auto;
     margin: 10px;
+    min-height: 100vh;
 }
 main{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
     margin-bottom: 70px;
-    font-size: 16px;
 }
 .error-par{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    position: relative;
-    width: fit-content;
+    width: auto;
     background-color: rgba(0, 0, 0, 0.593);
-    font-size: 25px;
+    font-size: 3vw;
+    padding: 10px;
+    border-radius: 50px;
+    color: #ff2600;
+    margin: 20px;
+}
+#error-info{
+    display: flex;
+    /* position:absolute; */
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.593);
+    font-size:2vw;
     padding: 10px;
     border-radius: 50px;
     color: #ff4d00;
-    margin: 20px;
 }
 .center-par{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: relative;
-    width: fit-content;
+    width: auto;
     background-color: rgba(0,0,0,0.50);
-    font-size: 35px;
+    font-size: 3vw;
     padding: 15px;
     margin: 10px;
     border-radius: 50px;
@@ -322,29 +454,11 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* width: 300px; */
-    position: relative;
     background-color: rgba(0,0,0,0.50);
-    font-size: 50px;
+    font-size: 3vw;
     padding: 10px;
     border-radius: 50px;
     color: #FFE400;
-}
-.link{
-    text-decoration-line: none;
-    padding: 1vw;
-    border: 1px solid black;
-    background-color: #81f032c8;
-    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
-    border-radius: 25px;
-    /* color: #F5B842; */
-    color: #222629;
-}
-.link:hover{
-    background-color: #7b14a7c8;
-    color: #82f032;
-    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.305), 0 17px 50px 0 rgba(0,0,0,0.19);
-    transform: scale(1.15);
 }
 table{
     display: flex;
@@ -446,17 +560,7 @@ td{
 .team-list-table td{
     border-radius: 50px 50px 10px 10px;
 }
-.join-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.join-form label{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 120%;
-}
+
 #submit{
     width: 40%;
 }
@@ -504,7 +608,9 @@ td{
     border-radius: 50px;
 }
 
+
 /* *********************************MAPS AND WEAPONS****************************************************************** */
+
 
 .map-container{
     display: flex;
@@ -638,7 +744,9 @@ td{
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
 }
 
+
 /* *********************************IMAGES*************************************************** */
+
 
 #new-back{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);

@@ -14,9 +14,15 @@
     <header>
         <div class="newnav">
         
-            <a href="/edit/profile/" class="link" id="loginout">Edit Profile</a>
+            <a href="/edit/profile/" class="loginout">
+                <span>Edit Profile</span>
+                <div class="wave-login"></div>
+            </a>
             
-            <a href="/logout/" class="link" id="loginout">Logout</a>
+            <a href="/logout/" class="loginout">
+                <span>Logout</span>
+                <div class="wave-login"></div>
+            </a>
         </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
@@ -25,17 +31,30 @@
         <h1 class="welcome-par">Welcome, {{logged_in_user.username}}</h1>
         <div class="dash">
             
-                <a href="/dashboard/randomize_weapon/">
+                <a href="/dashboard/randomize_weapon/" class="link">
                     <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+                    <div class="wave-link"></div>
                 </a>
             
-                <a href="/dashboard/maps/" class="link">All Maps</a>
+                <a href="/dashboard/maps/" class="link">
+                    <span>All Maps</span>
+                    <div class="wave-link"></div>
+                </a>
             
-                <a href="/dashboard/weapons/" class="link">All Weapons</a>
+                <a href="/dashboard/weapons/" class="link">
+                    <span>All Weapons</span>
+                    <div class="wave-link"></div>
+                </a>
             
-                <a href="/all-teams/" class="link">All Teams</a>
+                <a href="/all-teams/" class="link">
+                    <span>All Teams</span>
+                    <div class="wave-link"></div>
+                </a>
                 
-                <a href="/create/team/" class="link">Create a Team</a>
+                <a href="/create/team/" class="link">
+                    <span>Create a Team</span>
+                    <div class="wave-link"></div>
+                </a>
                 
                 
             </div>
@@ -44,14 +63,6 @@
 
 
     <main>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong class="error-par">WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p class="error-par">{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
     
     </main>
 

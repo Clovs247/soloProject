@@ -14,45 +14,50 @@
     <header>
         <div class="newnav">
         
-            <a href="/register/form" class="link" id="loginout">Register</a>
+            <a href="/register/form" class="loginout">
+                <span>Register</span>
+                <div class="wave-login"></div>
+            </a>
             
-            <a href="/login/form" class="link" id="loginout">Login</a>
+            <a href="/login/form" class="loginout">
+                <span>Login</span>
+                <div class="wave-login"></div>
+            </a>
         </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         
         </nav>
         <h1 class="welcome-par">Welcome to Splat-Hub</h1>
-        <p>Heres the info, but we suggest you login</p>
+        <p class="welcome-par">Heres the info, but we suggest you login</p>
         <div class="dash">
             
-                <a href="/dashboard/randomize_weapon/">
+                <a href="/new/dashboard/randomize_weapon/" class="link">
                     <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+                    <div class="wave-link"></div>
                 </a>
             
-                <a href="/dashboard/maps/" class="link">All Maps</a>
+                <a href="/new/dashboard/maps/" class="link">
+                    <span>All Maps</span>
+                    <div class="wave-link"></div>
+                </a>
             
-                <a href="/dashboard/weapons/" class="link">All Weapons</a>
+                <a href="/new/dashboard/weapons/" class="link">
+                    <span>All Weapons</span>
+                    <div class="wave-link"></div>
+                </a>
             
-                <a href="/all-teams/" class="link">All Teams</a>
-                
-                
-                
-                
+                <a href="/new/all-teams/" class="link">
+                    <span>All Teams</span>
+                    <div class="wave-link"></div>
+                </a>
+
             </div>
     </header>
 
 
 
     <main>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong class="error-par">WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p class="error-par">{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
     
     </main>
 

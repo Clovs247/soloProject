@@ -10,7 +10,7 @@ bcrypt = Bcrypt(app)
 @app.route('/')
 def index():
     if "user_id" not in session:
-        return render_template("index.html")
+        return render_template("unknown_dashboard.html")
     else:
         return redirect('/dashboard/')
 
