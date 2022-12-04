@@ -78,6 +78,7 @@ input[type=password] {
     cursor: pointer;
     background-color: #82f032;
     font-weight: 1000;
+    width: 40%;
 }
 #submit:hover{
     padding: 16px 32px;
@@ -114,6 +115,7 @@ input[type=password] {
     align-items: center;
     width: 120%;
 }
+
 
 /* *********************************NEW USER LOGIN FORM********************************************************************************* */
 
@@ -259,7 +261,8 @@ span{
     z-index: 2;
     letter-spacing: 4px;
     color: #c5c6c8;
-    font-size: 3vw;
+    font-size: 2vw;
+    width: 100%;
 }
 .view-delete{
     text-decoration-line: none;
@@ -320,8 +323,8 @@ span{
     transform: scale(1.15);
 }
 .wave-login{
-    width: 200px;
-    height: 150px;
+    width: 150%;
+    height: 250%;
     background-color: #ea7120;
     box-shadow: inset 0 0 50px rgba(76, 219, 40, 0.765);
     position: absolute;
@@ -354,8 +357,8 @@ span{
     animation: wave 10s linear infinite;
 }
 .wave-link{
-    width: 200px;
-    height: 250px;
+    width: 150%;
+    height:250%;
     background-color: #ea7120;
     box-shadow: inset 0 0 50px rgba(76, 219, 40, 0.765);
     position: absolute;
@@ -396,22 +399,6 @@ span{
     transform: translate(-50%,-75%) rotate(360deg);
     }
 }
-
-
-/* *********************************MAIN ELEMENTS****************************************************************** */
-
-
-body{
-    width: auto;
-    margin: 10px;
-    min-height: 100vh;
-}
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 70px;
-}
 .error-par{
     display: flex;
     flex-direction: column;
@@ -434,6 +421,21 @@ main{
     padding: 10px;
     border-radius: 50px;
     color: #ff4d00;
+}
+
+/* *********************************MAIN ELEMENTS****************************************************************** */
+
+
+body{
+    width: auto;
+    margin: 10px;
+    min-height: 100vh;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 70px;
 }
 .center-par{
     display: flex;
@@ -560,10 +562,6 @@ td{
 .team-list-table td{
     border-radius: 50px 50px 10px 10px;
 }
-
-#submit{
-    width: 40%;
-}
 .murch-container{
     display: flex;
     margin: 20px;
@@ -584,7 +582,7 @@ td{
     background-color: #222629;
     border-radius: 50px;
     color: #82f032;
-    font-size: 28px;
+    font-size: 2vw;
 }
 .random-murch{
     display: flex;
@@ -606,6 +604,46 @@ td{
     background-color: #900bc1;
     padding: 15px;
     border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+#weapon-img{
+    z-index: 2;
+    width: 5vw;
+}
+.wave-title{
+    width: 100%;
+    height: 250%;
+    background-color: #900bc1;
+    box-shadow: inset 0 0 50px rgba(76, 219, 40, 0.765);
+    position: absolute;
+    left: 0;
+    top: -60px;
+    transition: 0.4s;
+}
+.wave-title:before{
+    width: 200%;
+    height: 200%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    border-radius: 50%;
+    background-color: #ea7120;
+    animation: wave 5s linear infinite;
+}
+.wave-title:after{
+    width: 200%;
+    height: 200%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    border-radius: 40%;
+    background-color: rgba(20,20,20,0.5);
+    animation: wave 10s linear infinite;
 }
 
 
@@ -619,7 +657,7 @@ td{
     background-color: #81f0323f;
     background-image:url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg);
     border-radius: 80px;
-    margin: 50px;
+    margin: 25px;
 }
 .maps{
     display: flex;
@@ -629,10 +667,11 @@ td{
 .all-map-label{
     background-color: #585858;
     border-radius: 5px 5px 50px 50px;
+    position: relative;
     padding: 20px;
     margin: 10px;
     margin-top: 0px;
-    font-size: 50px;
+    font-size: 4vw;
     color: #FFE400;
     opacity: .9;
     background-image:url(/static/img/backgrounds/Repeating_Background.jpg);
@@ -644,6 +683,8 @@ td{
     padding: 20px;
     margin: 10px;
     opacity: .9;
+    /* position: relative;
+    overflow: hidden; */
     /* background-image:url(/static/img/backgrounds/Repeating_Background.jpg); */
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
 }
@@ -651,19 +692,66 @@ td{
     transform: scale(1.15);
     background-color: #747272;
 }
-.map-label p{
-    font-size: 20px;
-    /* background-color: #14A76C; */
-    background-color: #7b14a7c8;
-    color: #82f032;
-    padding: 5px;
-    /* padding: 5px; */
+.map-title{
+    position: relative;
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    border-radius: 25px;
+    border-radius: 50px;
+    padding: 5px;
     font-style: oblique;
     font-weight: 700;
     opacity: 1;
+    background-color: #900bc1;
+}
+.wave-map{
+    width: 500%;
+    height: 650%;
+    background-color: #900bc1;
+    box-shadow: inset 0 0 50px rgba(76, 219, 40, 0.765);
+    position: absolute;
+    left: 0;
+    top: -60px;
+    transition: 0.4s;
+}
+.wave-map:before{
+    width: 200%;
+    height: 200%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    border-radius: 50%;
+    background-color: #ea7120;
+    animation: wave 7s linear infinite;
+}
+.wave-map:after{
+    width: 200%;
+    height: 200%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    border-radius: 40%;
+    background-color: rgba(20,20,20,0.5);
+    animation: wave 10s linear infinite;
+}
+.map-label p{
+    /* font-size: 2vw; */
+    background-color: #7b14a7c8;
+    color: #82f032;
+    /* padding: 5px; */
+    /* position: relative;
+    overflow: hidden; */
+    /* padding: 5px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* border-radius: 25px; */
+    /* font-style: oblique;
+    font-weight: 700;
+    opacity: 1; */
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
 
 }

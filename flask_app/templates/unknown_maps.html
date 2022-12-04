@@ -13,90 +13,136 @@
 
     <header>
         <div class="newnav">
-            <a href="/register/form" class="link" id="loginout">Register</a>
+        
+            <a href="/register/form" class="loginout">
+                <span>Register</span>
+                <div class="wave-login"></div>
+            </a>
             
-            <a href="/login/form" class="link" id="loginout">Login</a>
+            <a href="/login/form" class="loginout">
+                <span>Login</span>
+                <div class="wave-login"></div>
+            </a>
         </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         </nav>
         <div class="dash">
             
-            <a href="/new/dashboard/randomize_weapon/">
+            <a href="/new/dashboard/randomize_weapon/" class="link">
                 <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+                <div class="wave-link"></div>
             </a>
         
-            <a href="/new/dashboard/maps/" class="link">All Maps</a>
+            <a href="/new/dashboard/maps/" class="link">
+                <span>All Maps</span>
+                <div class="wave-link"></div>
+            </a>
         
-            <a href="/new/dashboard/weapons/" class="link">All Weapons</a>
+            <a href="/new/dashboard/weapons/" class="link">
+                <span>All Weapons</span>
+                <div class="wave-link"></div>
+            </a>
         
-            <a href="/new/all-teams/" class="link">All Teams</a>
-            
+            <a href="/new/all-teams/" class="link">
+                <span>All Teams</span>
+                <div class="wave-link"></div>
+            </a>
+
         </div>
     </header>
 
 
     <main>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <strong class="error-par">WAAAIIITTTTT</strong>
-                {% for message in messages %}
-                    <p class="error-par">{{message}}</p>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+
         <div class="map-container">
 
             <h1 class="all-map-label">All Maps</h1>
             <div class="maps">
-                <label class="map-label">
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Scorch_Gorge.jpg') }}" alt="Scorch Gorge" class="map-imgs">
-                    <p>Scorch Gorge</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                            <span>Scorch Gorge</span>
+                            <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Eeltail_Alley.jpg') }}" alt="EelTail Alley" class="map-imgs">
-                    <p>EelTail Alley</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                        <span>EelTail Alley</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Museum_dAlfonsino.jpg') }}" alt="Museum D'Alfonsino" class="map-imgs">
-                    <p>Museum D'Alfonsino</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                        <span>Museum D'Alfonsino</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Undertow_Spillway.jpg') }}" alt="Undertow Spillway" class="map-imgs">
-                    <p>Undertow Spillway</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                        <span>Undertow Spillway</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Mincemeat_Metalworks.jpg') }}" alt="Mincemeat Metalworks" class="map-imgs">
-                    <p>Mincemeat Metalworks</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                        <span>Mincemeat Metalworks</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Hammerhead_Bridge.jpg') }}" alt="Hammerhead Bridge" class="map-imgs">
-                    <p>Hammerhead Bridge</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                        <span>Hammerhead Bridge</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Mahi-Mahi_Resort.jpg') }}" alt="Mahi-Mahi Resort" class="map-imgs">
-                    <p>Mahi-Mahi Resort</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                        <span>Mahi-Mahi Resort</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Inkblot_Art_Academy.jpg') }}" alt="Inkblot Art Academy" class="map-imgs">
-                    <p>Inkblot Art Academy</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                        <span>Inkblot Art Academy</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Sturgeon_Shipyard.png') }}" alt="Sturgeon Shipyard" class="map-imgs">
-                    <p>Sturgeon Shipyard</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                        <span>Sturgeon Shipyard</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Mako_Mart.jpg') }}" alt="MakoMart" class="map-imgs">
-                    <p>MakoMart</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                        <span>MakoMart</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Wahoo_World.jpg') }}" alt="Wahoo World" class="map-imgs">
-                    <p>Wahoo World</p>
-                </label>
-                <label class="map-label">
+                    <div class="map-title">
+                        <span>Wahoo World</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
+                <div class="map-label">
                     <img src="{{ url_for('static',filename='img/maps/Hagglefish_Market.jpg') }}" alt="Hagglefish Market" class="map-imgs">
-                    <p>Hagglefish Market</p>
-                </label>
+                    <div class="map-title">
+                        <span>Hagglefish Market</span>
+                        <div class="wave-map"></div>
+                    </div>
+                </div>
             </div>
         
         </div>
