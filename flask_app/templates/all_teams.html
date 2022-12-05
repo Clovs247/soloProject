@@ -11,33 +11,44 @@
 
 
 
+
     <header>
         <div class="newnav">
-            <a href="/edit/profile/" class="link" id="loginout">Edit Profile</a>
-            
-            <a href="/logout/" class="link" id="loginout">Logout</a>
+            <a href="/edit/profile/" class="loginout">
+                <span>Edit Profile</span>
+                <div class="wave-login"></div>
+            </a>
+            <a href="/logout/" class="loginout">
+                <span>Logout</span>
+                <div class="wave-login"></div>
+            </a>
         </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         </nav>
+        <h1 class="welcome-par">Welcome, {{logged_in_user.username}}</h1>
         <div class="dash">
-        
-            <a href="/dashboard/randomize_weapon/">
-                <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
-            </a>
-        
-            <a href="/dashboard/" class="link">Home</a>
-        
-            <a href="/dashboard/maps/" class="link">All Maps</a>
-        
-            <a href="/dashboard/weapons/" class="link">All Weapons</a>
-        
-            <a href="/all-teams/" class="link">All Teams</a>
-
-            <a href="/create/team/" class="link">Create a Team</a>
-        
-        
-        </div>
+                <a href="/dashboard/randomize_weapon/" class="link">
+                    <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+                    <div class="wave-link"></div>
+                </a>
+                <a href="/dashboard/maps/" class="link">
+                    <span>All Maps</span>
+                    <div class="wave-link"></div>
+                </a>
+                <a href="/dashboard/weapons/" class="link">
+                    <span>All Weapons</span>
+                    <div class="wave-link"></div>
+                </a>
+                <a href="/all-teams/" class="link">
+                    <span>All Teams</span>
+                    <div class="wave-link"></div>
+                </a>
+                <a href="/create/team/" class="link">
+                    <span>Create a Team</span>
+                    <div class="wave-link"></div>
+                </a>
+            </div>
     </header>
 
 
@@ -71,10 +82,16 @@
                             <p>{{ team.team_name }}</p>
                         </td>
                         <td>
-                            <a href="/team/{{team.id}}/view/" class="view-delete">View</a>
+                            <a href="/team/{{team.id}}/view/" class="view-delete">
+                                <span>View</span>
+                                <div class="wave-link"></div>
+                            </a>
                         </td>
                         <td>
-                            <a href="/team/{{team.id}}/delete/" class="view-delete">Delete</a>
+                            <a href="/team/{{team.id}}/delete/" class="view-delete">
+                                <span>Delete</span>
+                            <div class="wave-link"></div>
+                            </a>
                         </td>
                     </tr>
                     {% endif %}
@@ -96,11 +113,11 @@
             {% for team in all_teams%}
                 <tr class="all-teams">
                     <td>
-                        <a href="/team/{{team.id}}/view/" class="view">{{ team.team_name }}</a>
+                        <a href="/team/{{team.id}}/view/" class="view">
+                            <span>{{ team.team_name }}</span>
+                            <div class="wave-link"></div>
+                        </a>
                     </td>
-                    <!-- <td>
-                        <a href="/team/{{team.id}}/view/" class="view-delete">View</a>
-                    </td> -->
                     <td class="team-members">
                         {% for member in team.on_team %}
                             <p>{{member.username}}</p>

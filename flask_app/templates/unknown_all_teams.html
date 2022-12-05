@@ -10,42 +10,42 @@
 <body id="team-back" >
 
 
-
     <header>
         <div class="newnav">
-            <a href="/register/form" class="link" id="loginout">Register</a>
-            
-            <a href="/login/form" class="link" id="loginout">Login</a>
+            <a href="/register/form" class="loginout">
+                <span>Register</span>
+                <div class="wave-login"></div>
+            </a>
+            <a href="/login/form" class="loginout">
+                <span>Login</span>
+                <div class="wave-login"></div>
+            </a>
         </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
         </nav>
         <div class="dash">
-            
-            <a href="/new/dashboard/randomize_weapon/">
+            <a href="/new/dashboard/randomize_weapon/" class="link">
                 <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
+                <div class="wave-link"></div>
             </a>
-        
-            <a href="/new/dashboard/maps/" class="link">All Maps</a>
-        
-            <a href="/new/dashboard/weapons/" class="link">All Weapons</a>
-        
-            <a href="/new/all-teams/" class="link">All Teams</a>
-            
+            <a href="/new/dashboard/maps/" class="link">
+                <span>All Maps</span>
+                <div class="wave-link"></div>
+            </a>
+            <a href="/new/dashboard/weapons/" class="link">
+                <span>All Weapons</span>
+                <div class="wave-link"></div>
+            </a>
+            <a href="/new/all-teams/" class="link">
+                <span>All Teams</span>
+                <div class="wave-link"></div>
+            </a>
         </div>
     </header>
 
 
     <main>
-
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong class="error-par">WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p class="error-par">{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
 
 
         <h1 class="center-par">All Teams</h1>
@@ -61,7 +61,10 @@
             {% for team in all_teams%}
                 <tr class="all-teams">
                     <td>
-                        <a href="/new/team/{{team.id}}/view/" class="view">{{ team.team_name }}</a>
+                        <a href="/new/team/{{team.id}}/view/" class="view">
+                            <span>{{ team.team_name }}</span>
+                            <div class="wave-link"></div>
+                        </a>
                     </td>
                     <td class="team-members">
                         {% for member in team.on_team %}

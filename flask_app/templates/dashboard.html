@@ -10,15 +10,12 @@
 <body id="splatsville-back">
 
 
-
     <header>
         <div class="newnav">
-        
             <a href="/edit/profile/" class="loginout">
                 <span>Edit Profile</span>
                 <div class="wave-login"></div>
             </a>
-            
             <a href="/logout/" class="loginout">
                 <span>Logout</span>
                 <div class="wave-login"></div>
@@ -26,37 +23,29 @@
         </div>
         <nav>
             {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
-        
         </nav>
         <h1 class="welcome-par">Welcome, {{logged_in_user.username}}</h1>
         <div class="dash">
-            
                 <a href="/dashboard/randomize_weapon/" class="link">
                     <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
                     <div class="wave-link"></div>
                 </a>
-            
                 <a href="/dashboard/maps/" class="link">
                     <span>All Maps</span>
                     <div class="wave-link"></div>
                 </a>
-            
                 <a href="/dashboard/weapons/" class="link">
                     <span>All Weapons</span>
                     <div class="wave-link"></div>
                 </a>
-            
                 <a href="/all-teams/" class="link">
                     <span>All Teams</span>
                     <div class="wave-link"></div>
                 </a>
-                
                 <a href="/create/team/" class="link">
                     <span>Create a Team</span>
                     <div class="wave-link"></div>
                 </a>
-                
-                
             </div>
     </header>
 
