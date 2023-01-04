@@ -6,7 +6,7 @@ This is a passion project I made for my solo project at the coding bootcamp that
 This was made for a game by Nintendo, Splatoon 3.
 
 # IP address
-http://34.226.191.110/
+Had to disable this application for the time being. I'll get back to it soon. 
 
 # Purpose
 This app is to 
