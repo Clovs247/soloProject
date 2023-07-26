@@ -72,6 +72,9 @@
     justify-content: center;
     height: fit-content;
 }
+
+.link-home{}
+
 span{
     display: flex;
     flex-direction: column;
@@ -96,6 +99,7 @@ span{
     justify-content: space-between;
     text-align: center;
     align-items: center;
+    margin-top: 10px;
     padding: 10px;
     padding-right: 30px;
     padding-left: 30px;
@@ -115,8 +119,8 @@ span{
 .main-body{
     padding: 0 20px;
     text-align: center;
-    margin-top: 7px;
     margin: 5px;
+    margin-top: 7px;
     padding-top: 15px;
     padding-bottom: 15px;
     display: flex;
@@ -126,10 +130,56 @@ span{
 .welcome-par{
     background-color: rgba(0, 0, 0, 0.552);
     border: 1px solid black;
-    font-size: medium;
+    font-size: larger;
     padding: 10px;
     border-radius: 50px;
     color: #7b14a7c8;
+}
+
+#login_reg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    background-color: rgba(0, 0, 0, 0.587);
+    padding: 10px;
+    border-radius: 50px;
+    color: #FFE400;
+}
+#login_reg_form_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.579);
+    padding: 10px;
+    border-radius: 50px;
+    color: #FFE400;
+}
+#login_reg_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: medium;
+}
+
+#submit{
+    padding: 16px 32px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: #82f032;
+    font-weight: 1000;
+    width: 40%;
+}
+#submit:hover{
+    background-color: #7b14a7c8;
+    color: #82f032;
+    transform: scale(1.15);
 }
 
 .second-column{}
