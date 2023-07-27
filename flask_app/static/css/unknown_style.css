@@ -27,7 +27,7 @@ header{
     display: flex;
     justify-content:space-between;
     float: left;
-    position: fixed;
+    position: absolute;
 }
 #logclock{
     display: flex;
@@ -95,7 +95,6 @@ span{
     box-sizing: border-box;
     margin: 1px;
 }
-
 .main-body{
     padding: 0 20px;
     text-align: center;
@@ -232,8 +231,9 @@ input[type=password] {
     text-align: center;
     width: 300px;
 }
-
-
+.tiny-text{
+    font-size: smaller;
+}
 
 /***********************************LINK--WAVES********************************************************************************* */
 
