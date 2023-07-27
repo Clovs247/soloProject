@@ -7,30 +7,26 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/unknown_style.css') }}">
     <title>Register</title>
 </head>
-<body id="log-reg-back">
+<body id="splatsville-back">
 
-    <header>
-        <div class="newnav">
+    <header id="header-back">
+        <div class="lognav">
             <a href="/" class="links">
                 <span>Home</span>
                 <div class="wave-login"></div>
             </a>
-            <nav>
-                {% block menu %} {% include 'login_reg_menu.html' %} {% endblock menu %}
-            </nav>
-            <a class="link-home"></a>
         </div>
+        <nav id="logclock">
+            {% block menu %} {% include 'login_reg_menu.html' %} {% endblock menu %}
+        </nav>
     </header>
 
     <main>
         <div class="main-body">
             <h1 class="welcome-par">Welcome to Splat-Hub</h1>
-            
-            <h3 id="login_reg">Register</h3>
-
-            
             <div id="login_reg_form_div">
                 <form action="/register/" method="post" id="login_reg_form">
+                    <h2>Register</h2>
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             <strong class="error-par">Hold Up, Chum</strong>
