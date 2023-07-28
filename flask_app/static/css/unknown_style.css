@@ -9,7 +9,6 @@
 #header-back{
     background-image:url(/static/img/backgrounds/Logos.jpg);
     background-size: cover;
-    
 }
 /*********************************** HEADER ********************************************************************************* */
 
@@ -47,7 +46,7 @@ header{
     position: relative;
     display: flex;
     justify-content: center;
-    height: fit-content;
+    height:fit-content ;
 }
 .links:hover{
     background-color: #7b14a7c8;
@@ -55,7 +54,7 @@ header{
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.305), 0 17px 50px 0 rgba(0,0,0,0.19);
     transform: scale(1.15);
 }
-span{
+.links span{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,7 +68,7 @@ span{
     border-radius: 20%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
     align-items: center;
     margin-top: 10px;
@@ -98,8 +97,8 @@ span{
 .main-body{
     padding: 0 20px;
     text-align: center;
-    margin: 5px;
-    margin-top: 7px;
+    /* margin: 5px;
+    margin-top: 7px; */
     padding-top: 15px;
     padding-bottom: 15px;
     display: flex;
@@ -112,8 +111,8 @@ span{
     font-size: larger;
     padding: 10px;
     border-radius: 50px;
-    color: #6b2887;
     color: #c5c6c8;
+    margin-bottom: 15px;
 }
 
 .second-column{}
@@ -207,6 +206,51 @@ input[type=text], [type=email], [type=password]{
     font-size: smaller;
 }
 
+/*********************************** FORMS ********************************************************************************* */
+
+.map-container{
+    background-color: #81f0323f;
+    background-image:url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg);
+    background-size:auto;
+    border-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.maps{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.map-imgs{
+    border: 5px solid #FFE400;
+    border-radius: 25px;
+    width: 500px;
+}
+.map-title{
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 5px;
+    background-color: #900bc1;
+    color: #FFE400;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+}
+.map-label{
+    background-color: #585858;
+    border-radius: 5px 5px 50px 50px;
+    /* position: relative; */
+    padding: 20px;
+    margin: 10px;
+    margin-top: 0px;
+    
+}
+.map-label:hover{
+    transform: scale(1.15);
+    background-color: #747272;
+}
+
+
 /***********************************LINK--WAVES********************************************************************************* */
 
 
@@ -218,5 +262,8 @@ input[type=text], [type=email], [type=password]{
     /* For mobile phones: */
     .main-body, .second-column {
     width: 100%;
+    }
+    .map-imgs{
+        width: 230px;
     }
 }

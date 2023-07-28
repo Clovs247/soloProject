@@ -686,9 +686,6 @@ td{
     padding: 20px;
     margin: 10px;
     opacity: .9;
-    /* position: relative;
-    overflow: hidden; */
-    /* background-image:url(/static/img/backgrounds/Repeating_Background.jpg); */
     box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
 }
 .map-label:hover{
