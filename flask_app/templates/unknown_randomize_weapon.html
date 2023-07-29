@@ -58,19 +58,20 @@
 
 
     <main>
-    
-    <div class="murch-container">
-        <h3>Oi! You're not connected to the server.</h3>
-        <h3>But if you're looking for a weapon to use, Here.</h3>
-        <div class="random-murch">
-            
+    <div class="main-body">
+        <div class="murch-container">
+            <div class="random-murch">
+                <h3 class="murch-par">Oi! You're not signed in,</h3>
+                <h3 class="murch-par">but if you're looking for a weapon to use, Here.</h3>
+                
+                <img src="/static/img/char_icons/Murch_Chilling.jpg" alt="Murch_Chilling" id="murch-chilling">
+                
+            </div>
             <h1 id="random-weapon">
                 <span>{{random_weapon.weapon_name}}</span>
                 <div class="wave-title"></div>
                 <img src="/static/img/weapons/{{random_weapon.weapon_image}}" alt="{{random_weapon.weapon_name}}" id="weapon-img">
             </h1>
-            <img src="/static/img/char_icons/Murch_Chilling.jpg" alt="Murch_Chilling" id="murch-chilling">
-                
         </div>
     </div>
     </main>
