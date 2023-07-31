@@ -27,16 +27,16 @@
             <div id="login_reg_form_div">
                 <form action="/register/" method="post" id="login_reg_form">
                     <h2 id="login_reg">Register</h2>
-                    
-                    {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            <strong class="error-par">Hold Up, Chum</strong>
-                            {% for message in messages %}
-                                <p id="error-info">{{message}}</p>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
-                    
+                    <div class="errors">
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <strong class="error-par">Hold Up, Chum</strong>
+                                {% for message in messages %}
+                                    <p id="error-info">{{message}}</p>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
                     <label>
                         Username:
                         <input type="text" name="username" id="username">

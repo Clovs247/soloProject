@@ -122,7 +122,6 @@ header{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    align-content: center;
     font-family: sans-serif;
     background-image:url(/static/img/backgrounds/Graffiti.jpg);
     background-color: slategrey;
@@ -201,6 +200,9 @@ input[type=text], [type=email], [type=password]{
 }
 .tiny-text{
     font-size: smaller;
+}
+.errors{
+    color: red;
 }
 
 /*********************************** MAPS ********************************************************************************* */
@@ -292,8 +294,8 @@ input[type=text], [type=email], [type=password]{
 }
 
 
-
 /*********************************** WEAPONS ********************************************************************************* */
+
 
 .weapon-container{
     display: flex;
@@ -351,7 +353,6 @@ input[type=text], [type=email], [type=password]{
 }
 
 
-
 /***********************************LINK--WAVES********************************************************************************* */
 
 
@@ -363,6 +364,9 @@ input[type=text], [type=email], [type=password]{
     /* For mobile phones: */
     .main-body, .second-column {
     width: 100%;
+    }
+    .welcome-par{
+        font-size: medium;
     }
     .map-imgs{
         width: 230px;
