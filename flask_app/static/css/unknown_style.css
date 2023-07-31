@@ -1,6 +1,6 @@
 
-
 /*********************************** IMAGES ********************************************************************************* */
+
 
 #splatsville-back{
     background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
@@ -10,7 +10,10 @@
     background-image:url(/static/img/backgrounds/Logos.jpg);
     background-size: cover;
 }
+
+
 /*********************************** HEADER ********************************************************************************* */
+
 
 header{
     padding: 15px;

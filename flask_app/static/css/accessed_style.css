@@ -1,0 +1,181 @@
+
+/*********************************** IMAGES ********************************************************************************* */
+
+#splatsville-back{
+    background-image:url(/static/img/backgrounds/REPEAT_BACK.png);
+    background-repeat: repeat;
+}
+#header-back{
+    background-image:url(/static/img/backgrounds/Logos.jpg);
+    background-size: cover;
+}
+
+/* *********************************CLOCK********************************************************************************* */
+
+.clock{
+    width:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: sans-serif;
+    background-image:url(/static/img/backgrounds/Graffiti.jpg);
+    background-color: slategrey;
+    padding: 40px;
+    border: 2px solid black;
+    margin-bottom: 5px;
+    border-radius: 100%;
+    background-size: contain;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+}
+.time{
+    font-size:large;
+    font-weight: bold;
+    color: #FFE400;
+    font-style:italic;
+}
+.date-time{
+    display: flex;
+    justify-items: center;
+    font-size: x-small;
+    color: #82f032;
+    font-style: italic;
+}
+@media screen and (max-width: 768px){
+    .time{
+        font-size: medium;
+    }
+}
+
+
+/*********************************** HEADER ********************************************************************************* */
+
+
+header{
+    padding: 15px;
+    padding-bottom: 7px;
+    border-radius: 15%;
+}
+.newnav{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 10px;
+}
+.lognav{
+    display: flex;
+    justify-content:space-between;
+    float: left;
+    position: absolute;
+}
+#logclock{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.links{
+    background-color: rgba(170, 154, 82, 0.3);
+    padding: 10px;
+    text-decoration-line: none;
+    border: 1px solid black;
+    border-radius: 25%;
+    font-size: large;
+    color: #222629;
+    font-weight: 900; 
+    font-style: oblique;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height:fit-content ;
+}
+.links:hover{
+    background-color: #7b14a7c8;
+    color: #82f032;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.305), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.15);
+}
+.links span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    color: #c5c6c8;
+}
+.menu{
+    font-weight: 900;
+    border: 2px solid black;
+    border-radius: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color:rgb(68, 96, 54);
+    background-image:url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg);
+    background-size:cover ;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+}
+#murch{
+    border-radius: 75px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    height: 50px;
+}
+
+
+/*********************************** MAIN CONTENT ********************************************************************************* */
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+.main-body{
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+.welcome-par{
+    background-color: rgba(57, 50, 20, 0.754);
+    border: 1px solid black;
+    font-size: x-large;
+    padding: 10px;
+    border-radius: 50px;
+    color: #c5c6c8;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+/* *********************************MOBILE-DISPLAY********************************************************************************* */
+
+@media only screen and (max-width: 600px){
+    /* For mobile phones: */
+    .main-body, .second-column {
+    width: 100%;
+    }
+    .welcome-par{
+        font-size: medium;
+    }
+    .links{
+        font-size: medium;
+    }
+    .map-imgs{
+        width: 230px;
+    }
+    #weapon-img{
+        width: 75px;
+    }
+    #murch-chilling{
+        width: 350px;
+    }
+}
