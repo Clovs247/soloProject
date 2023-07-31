@@ -11,7 +11,7 @@
 
     
 
-    <header>
+    <header id="header-back">
         <div class="newnav">
             <a href="/register/form" class="links">
                 <span>Register</span>
@@ -48,34 +48,35 @@
 
 
     <main>
+        <div class="main-body">
+            <div class="weapon-container">
 
-        <div class="weapon-container">
-
-            <h1 class="center-par">All Weapons</h1>
-            
-            <div class="all-weapons">
-                {% for weapon in all_weapons %}
-                    <label class="weapon-label">
-                        <div class="weapon-loadout">
-                            <a href="/new/view-weapon/{{weapon.id}}">
-                                <img src="/static/img/weapons/{{weapon.weapon_image}}" alt="{{weapon.weapon_name}}" class="weapon-img">
-                            </a>
-                            <div class="attachments">
-                                <img src="/static/img/subs/{{weapon.sub_image}}" alt="{{weapon.sub_name}}" class="weapon-sub">
-                                <img src="/static/img/specials/{{weapon.special_image}}" alt="{{weapon.special_name}}" class="weapon-spe">
+                <h1 class="center-par">All Weapons</h1>
+                
+                <div class="all-weapons">
+                    {% for weapon in all_weapons %}
+                        <label class="weapon-label">
+                            <div class="weapon-loadout">
+                                <a href="/new/view-weapon/{{weapon.id}}">
+                                    <img src="/static/img/weapons/{{weapon.weapon_image}}" alt="{{weapon.weapon_name}}" class="weapon-img">
+                                </a>
+                                <div class="attachments">
+                                    <img src="/static/img/subs/{{weapon.sub_image}}" alt="{{weapon.sub_name}}" class="weapon-sub">
+                                    <img src="/static/img/specials/{{weapon.special_image}}" alt="{{weapon.special_name}}" class="weapon-spe">
+                                </div>
                             </div>
-                        </div>
-                        <div class="weapon-title">
-                            <p>
-                                <span>{{weapon.weapon_name}}</span>
-                                <div class="wave-weapon"></div>
-                            </p>
-                        </div>
-                    </label>
-                {% endfor %}
+                            <div class="weapon-title">
+                                <p>
+                                    <span>{{weapon.weapon_name}}</span>
+                                    <div class="wave-weapon"></div>
+                                </p>
+                            </div>
+                        </label>
+                    {% endfor %}
+                    
+                </div>
                 
             </div>
-            
         </div>
     
     

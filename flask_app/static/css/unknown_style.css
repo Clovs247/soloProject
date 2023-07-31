@@ -281,13 +281,74 @@ input[type=text], [type=email], [type=password]{
     width: 75%;
     opacity: .8;
 }
+#random-weapon span{
+    font-size: medium;
+}
 #murch-chilling{
     width: 600px;
     border-radius: 75px;
 }
 #weapon-img{
     width: 100px;
+    background-color: #384031;
+    border-radius: 50px;
 }
+
+
+
+/*********************************** WEAPONS ********************************************************************************* */
+
+.weapon-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.all-weapons{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.weapon-label{
+    background-color: #4d4a4a;
+    border-radius: 50px 50px 50px 50px;
+    border: 1px solid #5a117ac8;
+    padding: 20px;
+    margin: 10px;
+}
+.weapon-title{
+    display: flex;
+    padding: 10px 15px;
+    justify-content: center;
+    border-radius: 25px;
+    font-size: small;
+    background-color: #82f032;
+    color: #5f07ed;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+}
+.weapon-img{
+    width: 100px;
+    background-color: #384031;
+    border-radius: 50px;
+}
+.weapon-sub{
+    height: 30px;
+    width: 30px;
+    background-color: #515948;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+
+} 
+.weapon-spe{
+    height: 30px;
+    width: 30px;
+    background-color: #515948;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+
+}
+
 
 
 /***********************************LINK--WAVES********************************************************************************* */
@@ -306,7 +367,7 @@ input[type=text], [type=email], [type=password]{
         width: 230px;
     }
     #weapon-img{
-        width: 50px;
+        width: 75px;
     }
     #murch-chilling{
         width: 350px;
