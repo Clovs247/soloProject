@@ -152,11 +152,53 @@ header{
     margin-bottom: 15px;
 }
 
+/*********************************** RANDOMIZER ********************************************************************************* */
 
-
+.murch-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-image: url(/static/img/backgrounds/splatoon3-graffiti-pattern-02.jpg);
+    padding-top: 7px;
+}
+.murch-par{
+    padding: 7px;
+    background-color: #222629;
+    border-radius: 50px;
+    color: #82f032;
+}
+.random-murch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 75px;
+}
+#random-weapon{
+    color: #82f032;
+    background-color: #6f0b94;
+    padding: 15px;
+    border-radius: 50px;
+    width: 75%;
+    opacity: .8;
+}
+#random-weapon span{
+    font-size: medium;
+}
+#murch-chilling{
+    width: 600px;
+    border-radius: 75px;
+}
+#weapon-img{
+    width: 100px;
+    background-color: #384031;
+    border-radius: 50px;
+}
 
 
 /* *********************************MOBILE-DISPLAY********************************************************************************* */
+
 
 @media only screen and (max-width: 600px){
     /* For mobile phones: */
