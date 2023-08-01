@@ -151,6 +151,15 @@ header{
     color: #c5c6c8;
     margin-bottom: 15px;
 }
+.title-par{
+    background-color: rgba(57, 50, 20, 0.754);
+    border: 1px solid black;
+    font-size: x-large;
+    padding: 10px;
+    border-radius: 50px;
+    color: #c5c6c8;
+    margin-bottom: 15px;
+}
 
 /*********************************** RANDOMIZER ********************************************************************************* */
 
@@ -197,6 +206,167 @@ header{
 }
 
 
+/*********************************** MAPS ********************************************************************************* */
+
+
+.map-container{
+    background-color: #81f0323f;
+    background-image:url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg);
+    background-size:auto;
+    border-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+.maps{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.map-imgs{
+    border: 5px solid #FFE400;
+    border-radius: 25px;
+    width: 500px;
+}
+.map-title{
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    padding: 5px;
+    background-color: #900bc1;
+    color: #FFE400;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+}
+.map-label{
+    background-color: #585858;
+    border-radius: 5px 5px 50px 50px;
+    padding: 20px;
+    margin: 10px;
+    margin-top: 0px;
+    
+}
+.map-label:hover{
+    transform: scale(1.15);
+    background-color: #747272;
+}
+
+
+/*********************************** WEAPONS ********************************************************************************* */
+
+
+.weapon-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    background-image:url(/static/img/backgrounds/Splatoon3_BG_Paper.jpg);
+    border-radius: 50px;
+}
+.all-weapons{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.weapon-label{
+    background-color: #4d4a4a;
+    border-radius: 50px 50px 50px 50px;
+    border: 1px solid #5a117ac8;
+    padding: 20px;
+    margin: 10px;
+}
+.weapon-title{
+    display: flex;
+    padding: 10px 15px;
+    justify-content: center;
+    border-radius: 25px;
+    font-size: medium;
+    background-color: #82f032;
+    color: #5f07ed;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+    width: 125px;
+}
+.weapon-img{
+    width: 100px;
+    background-color: #384031;
+    border-radius: 50px;
+}
+.weapon-sub{
+    height: 45px;
+    width: 45px;
+    background-color: #515948;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+
+} 
+.weapon-spe{
+    height: 45px;
+    width: 45px;
+    background-color: #515948;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.364), 0 17px 50px 0 rgba(0, 0, 0, 0.216);
+
+}
+
+
+/*********************************** FORMS ********************************************************************************* */
+
+
+.errors{
+    color: red;
+}
+.new_team_form_div{
+    background-color: rgba(0,0,0,0.50);
+    padding: 10px;
+    border-radius: 50px;
+    color: #FFE400;
+}
+.new_team_form{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: medium;
+    background-color: rgba(255, 255, 255, 0.445);
+    padding: 30px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    border-radius: 15px;
+}
+.new_team_form label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input[type=text], [type=email], [type=password]{
+    margin: 8px 0;
+    border-radius: 25px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    text-align: center;
+    width: 300px;
+}
+#submit{
+    padding: 16px 32px;
+    border: 2px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: #82f032;
+    font-weight: 1000;
+    width: 40%;
+}
+#submit:hover{
+    background-color: #7b14a7c8;
+    color: #82f032;
+    transform: scale(1.15);
+}
+
+
 /* *********************************MOBILE-DISPLAY********************************************************************************* */
 
 
@@ -206,6 +376,9 @@ header{
     width: 100%;
     }
     .welcome-par{
+        font-size: medium;
+    }
+    .title-par{
         font-size: medium;
     }
     .links{
@@ -219,5 +392,19 @@ header{
     }
     #murch-chilling{
         width: 350px;
+    }
+    .weapon-img{
+        width: 75px;
+    }
+    .weapon-sub{
+        width: 30px;
+        height: 30px;
+    }
+    .weapon-spe{
+        width: 30px;
+        height: 30px;
+    }
+    .weapon-title{
+        font-size: small;
     }
 }
