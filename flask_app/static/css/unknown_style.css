@@ -368,6 +368,9 @@ input[type=text], [type=email], [type=password]{
     .main-body, .second-column {
     width: 100%;
     }
+    .links{
+        font-size: small;
+    }
     .welcome-par{
         font-size: medium;
     }

@@ -103,7 +103,7 @@ def new_view_team(team_id):
         'id' : team_id
     }
     club = team.Team.get_team_with_users(team_data)
-    print("*****************", club.on_team)
+    print("*****************", club)
     return render_template('unknown_view_team.html', club = club)
 
 

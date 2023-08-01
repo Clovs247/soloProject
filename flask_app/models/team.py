@@ -121,7 +121,7 @@ class Team:
             }
             teammember.weapon = weapon.Weapon.get_user_with_weapon(weap_data)
             club.on_team.append(teammember)
-            # print("&&&&&&&&&&&&&&&&&&", len(club.on_team))
+            print("&&&&&&&&&&&&&&&&&&", club.team_name)
         return club
 
     @classmethod
