@@ -326,21 +326,28 @@ header{
 .new_team_form{
     display: flex;
     flex-direction: column;
-    height: 250px;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: medium;
     background-color: rgba(255, 255, 255, 0.445);
-    padding: 30px;
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding: 10px;
+    padding-bottom: 20px;
     border-radius: 15px;
 }
 .new_team_form label{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.weapon-selection{
+    width: 80%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 25px;
+}
+.weapon-selection select{
+    display: none;
 }
 input[type=text], [type=email], [type=password]{
     margin: 8px 0;
@@ -352,13 +359,12 @@ input[type=text], [type=email], [type=password]{
     width: 300px;
 }
 #submit{
-    padding: 16px 32px;
+    padding: 16px ;
     border: 2px solid black;
     border-radius: 25px;
     cursor: pointer;
     background-color: #82f032;
     font-weight: 1000;
-    width: 40%;
 }
 #submit:hover{
     background-color: #7b14a7c8;

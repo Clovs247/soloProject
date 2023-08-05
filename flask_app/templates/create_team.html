@@ -4,47 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/accessed_style.css') }}">
     <title>Form a New Team</title>
 </head>
 
 
-<body id="make-team-back">
+<body id="splatsville-back">
 
 
-    <header>
+    <header id="header-back">
         <div class="newnav">
-            <a href="/edit/profile/" class="loginout">
+            <a href="/edit/profile/" class="links">
                 <span>Edit Profile</span>
                 <div class="wave-login"></div>
             </a>
-            <a href="/logout/" class="loginout">
+            <nav>
+                {% block menu %} {% include 'clock_nav.html' %} {% endblock menu %}
+            </nav>
+            <a href="/logout/" class="links">
                 <span>Logout</span>
                 <div class="wave-login"></div>
             </a>
         </div>
-        <nav>
-            {% block menu %} {% include 'logged_in_menu.html' %} {% endblock menu %}
-        </nav>
-        <h1 class="welcome-par">Welcome, {{logged_in_user.username}}</h1>
-        <div class="dash">
-                <a href="/dashboard/randomize_weapon/" class="link">
+        
+        <div class="menu">
+                <a href="/dashboard/randomize_weapon/" class="links">
                     <img src="{{ url_for('static',filename='img/char_icons/Murch_icon.png') }}" alt="Murch" id="murch">
                     <div class="wave-link"></div>
                 </a>
-                <a href="/dashboard/maps/" class="link">
+                <a href="/dashboard/maps/" class="links">
                     <span>All Maps</span>
                     <div class="wave-link"></div>
                 </a>
-                <a href="/dashboard/weapons/" class="link">
+                <a href="/dashboard/weapons/" class="links">
                     <span>All Weapons</span>
                     <div class="wave-link"></div>
                 </a>
-                <a href="/all-teams/" class="link">
+                <a href="/all-teams/" class="links">
                     <span>All Teams</span>
                     <div class="wave-link"></div>
                 </a>
-                <a href="/create/team/" class="link">
+                <a href="/create/team/" class="links">
                     <span>Create a Team</span>
                     <div class="wave-link"></div>
                 </a>
@@ -52,34 +52,38 @@
     </header>
 
     <main>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <strong class="error-par">WAAAIIITTTTT</strong>
-            {% for message in messages %}
-                <p class="error-par">{{message}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-        <h1 class="center-par">Create a Team</h1>
-        <div id="new_team_form_div">
-            <form action="/create/team/form/" method="post" class="new_team_form">
-                <label>
-                    Team Name:
-                    <input type="text" name="team_name">
-                </label>
-                <label>
-                    Weapon Choice:
-                    <select name="weapon_id" class="weapon-selection">
-                        {% for weapon in all_weapons %}
-                            <option value="{{weapon.id}}" class="weapon-select">{{weapon.weapon_name}}</option>
+        <div class="main-body">
+            <div class="errors">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <strong class="error-par">WAAAIIITTTTT</strong>
+                        {% for message in messages %}
+                            <p class="error-par">{{message}}</p>
                         {% endfor %}
-                    </select>
-                </label>
-                <label>
-                    <input type="submit" value="Create" id="submit">
-                </label>
-            </form>
-            
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="new_team_form_div">
+                <form action="/create/team/form/" method="post" class="new_team_form">
+                    <h1 class="welcome-par">Create a Team</h1>
+                    <label>
+                        Team Name:
+                        <input type="text" name="team_name">
+                    </label>
+                    <label>
+                        Weapon Choice:
+                        <select name="weapon_id" class="weapon-selection">
+                            {% for weapon in all_weapons %}
+                                <option value="{{weapon.id}}" class="weapon-select">{{weapon.weapon_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    <label>
+                        <input type="submit" value="Create" id="submit">
+                    </label>
+                </form>
+                
+            </div>
         </div>
     
     
