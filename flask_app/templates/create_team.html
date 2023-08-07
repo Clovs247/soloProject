@@ -53,17 +53,17 @@
 
     <main>
         <div class="main-body">
-            <div class="errors">
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        <strong class="error-par">WAAAIIITTTTT</strong>
-                        {% for message in messages %}
-                            <p class="error-par">{{message}}</p>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            </div>
             <div class="new_team_form_div">
+                <div class="errors">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <strong class="error-par">WAAAIIITTTTT</strong>
+                            {% for message in messages %}
+                                <p class="error-par">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
                 <form action="/create/team/form/" method="post" class="new_team_form">
                     <h1 class="welcome-par">Create a Team</h1>
                     <label>

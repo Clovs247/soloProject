@@ -294,6 +294,7 @@ input[type=text], [type=email], [type=password]{
     width: 100px;
     background-color: #384031;
     border-radius: 50px;
+    padding: 10px;
 }
 
 
@@ -335,6 +336,7 @@ input[type=text], [type=email], [type=password]{
     width: 100px;
     background-color: #384031;
     border-radius: 50px;
+    padding: 10px;
 }
 .weapon-sub{
     height: 45px;
