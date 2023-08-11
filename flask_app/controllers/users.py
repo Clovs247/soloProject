@@ -1,7 +1,7 @@
 import bcrypt
 import random
 from flask_app import app
-from flask_app.models import user, weapon
+from flask_app.models import user, weapon, map
 from flask import render_template, redirect, request, session, flash
 from flask_bcrypt import Bcrypt
 
@@ -115,8 +115,9 @@ def all_maps():
         data = {
             'id' : session['user_id']
         }
+        all_maps = map.Map.get_all_maps()
         logged_in_user = user.User.get_user_by_id(data)
-        return render_template('all_maps.html', logged_in_user=logged_in_user)
+        return render_template('all_maps.html', logged_in_user=logged_in_user, all_maps=all_maps)
 
 
 @app.route('/dashboard/weapons/')

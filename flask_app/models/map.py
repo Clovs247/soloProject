@@ -16,14 +16,22 @@ class Map:
     @classmethod
     def get_all_maps(cls):
         query="""
-        SELCT * FROM map
+        SELECT * FROM map
         ;"""
         results = connectToMySQL(cls.db).query_db(query)
         maps = []
         for row in results:
-            maps.apphend(cls(row))
+            maps.append(cls(row))
         return maps
     
+    @classmethod
+    def get_map_by_id(cls, data):
+        query="""
+        SELECT * FROM map
+        WHERE id = %(id)s
+        ;"""
+        results = connectToMySQL(cls.db).query_db(query, data)
+        return results
 
     # ****************************UPDATE*************************************
 
