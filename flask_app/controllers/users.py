@@ -165,7 +165,8 @@ def new_dash():
 
 @app.route('/new/dashboard/maps/')
 def new_maps():
-    return render_template('unknown_maps.html')
+    all_maps = map.Map.get_all_maps()
+    return render_template('unknown_maps.html', all_maps=all_maps)
 
 @app.route('/new/dashboard/weapons/')
 def new_weapon():

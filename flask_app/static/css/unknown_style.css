@@ -114,6 +114,15 @@ header{
     color: #c5c6c8;
     margin-bottom: 15px;
 }
+.title-par{
+    background-color: rgba(57, 50, 20, 0.754);
+    border: 1px solid black;
+    font-size: x-large;
+    padding: 10px;
+    border-radius: 50px;
+    color: #c5c6c8;
+    margin-bottom: 15px;
+}
 
 .second-column{}
 
