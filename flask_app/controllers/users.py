@@ -151,7 +151,7 @@ def random_weapon():
         }
         logged_in_user = user.User.get_user_by_id(data)
         random_number ={
-            'id' : random.randrange(0, 91)
+            'id' : random.randrange(0, 90)
         } 
         print(type(random_number))
         random_weapon = weapon.Weapon.get_weapon_with_sub_and_special((random_number))
