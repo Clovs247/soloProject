@@ -123,6 +123,22 @@ header{
     color: #c5c6c8;
     margin-bottom: 15px;
 }
+.collapsible{
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+    font-size: larger;
+    background-color: rgb(148, 39, 128);
+}
+.collapsible:hover{
+    background-color: rgb(104, 31, 136);
+}
+.content{
+    padding: 0 10px;
+    display: none;
+    overflow: hidden;
+
+}
 
 .second-column{}
 
